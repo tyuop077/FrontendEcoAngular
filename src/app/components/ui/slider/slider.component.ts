@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
 
@@ -6,7 +6,8 @@ import { SwiperComponent } from 'swiper/angular';
 	selector: 'app-slider',
 	templateUrl: './slider.component.html',
 	styleUrls: ['./slider.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	encapsulation: ViewEncapsulation.None
 })
 export class SliderComponent implements OnInit {
 
@@ -33,10 +34,10 @@ export class SliderComponent implements OnInit {
 
 	@ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
 	slideNext(){
-		this.swiper!.swiperRef.slideNext(100);
+		this.swiper!.swiperRef.slideNext(300);
 	}
 	slidePrev(){
-		this.swiper!.swiperRef.slidePrev(100);
+		this.swiper!.swiperRef.slidePrev(300);
 	}
 
 }

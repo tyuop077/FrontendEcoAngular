@@ -1,5 +1,6 @@
 <div [className]="color$ === 'yellow' ? 'sliderYellow' : 'slider'">
 	<swiper
+		#swiper
 		[config]="config"
 		(swiper)="onSwiper($event)"
 		(slideChange)="onSlideChange()"
@@ -31,17 +32,17 @@
 				<button>Пункты сбора масок</button>
 			</div>
 		</ng-template>
-		<button
-			class="arrowL"
-			(click)="slideNext()"
-		>
-			<img alt="Slider arrow" src="assets/sliderArrow.svg" />
-		</button>
-		<button
-			class="arrowR"
-			(click)="slidePrev()"
-		>
-			<img alt="Slider arrow" src="assets/sliderArrow.svg" />
-		</button>
 	</swiper>
+	<button
+		class="arrowL"
+		(click)="slidePrev()"
+	>
+		<img alt="Slider arrow" src="assets/sliderArrow.svg" />
+	</button>
+	<button
+		class="arrowR"
+		(click)="slideNext()"
+	>
+		<img alt="Slider arrow" src="assets/sliderArrow.svg" />
+	</button>
 </div>
