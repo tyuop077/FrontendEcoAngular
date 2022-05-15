@@ -1,8 +1,7 @@
-<div [className]="color$ === 'yellow' ? 'sliderYellow' : 'slider'">
+<div [className]="(color$ | async) === 'yellow' ? 'sliderYellow' : 'slider'">
 	<swiper
 		#swiper
 		[config]="config"
-		(swiper)="onSwiper($event)"
 		(slideChange)="onSlideChange()"
 	>
 		<ng-template swiperSlide>

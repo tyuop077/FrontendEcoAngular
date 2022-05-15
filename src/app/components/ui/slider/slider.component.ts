@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
 	selector: 'app-slider',
@@ -23,21 +24,19 @@ export class SliderComponent implements OnInit {
 		scrollbar: { draggable: true }
 	};
 
-	onSwiper([swiper]: any) {
-		console.log(swiper);
-	}
-	onSlideChange() {
-		this.color$ = this.swiper!.swiperRef.activeIndex === 1 ? "yellow" : "green";
-	}
-
-	color$: "green" | "yellow" = "green";
-
 	@ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
+
+	color$ = new BehaviorSubject<"green" | "yellow">("green");
+
+	onSlideChange() {
+		this.color$.next(this.swiper!.swiperRef.activeIndex === 1 ? "yellow" : "green");
+	}
+
 	slideNext(){
-		this.swiper!.swiperRef.slideNext(300);
+		this.swiper?.swiperRef.slideNext();
 	}
 	slidePrev(){
-		this.swiper!.swiperRef.slidePrev(300);
+		this.swiper?.swiperRef.slidePrev();
 	}
 
 }
