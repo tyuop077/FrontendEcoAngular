@@ -1,10 +1,11 @@
+@import '~swiper/swiper.min.css';
+
 .slider {
 	background: #B3EDC8;
 	max-width: 1200px;
 	border-radius: 20px;
 	height: 320px;
 	transition: background-color 0.2s;
-	display: flex;
 	.content {
 		padding: 56px 55px 56px 64px;
 		h2 {
