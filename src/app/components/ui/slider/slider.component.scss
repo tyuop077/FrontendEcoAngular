@@ -1,0 +1,78 @@
+.slider {
+	background: #B3EDC8;
+	max-width: 1200px;
+	border-radius: 20px;
+	height: 320px;
+	transition: background-color 0.2s;
+	display: flex;
+	.content {
+		padding: 56px 55px 56px 64px;
+		h2 {
+			font-size: 48px;
+			line-height: 56px;
+			margin: 0 0 15px 0;
+		}
+		span {
+			font-size: 16px;
+			line-height: 24px;
+		}
+		button {
+			padding: 12px 24px;
+			border-radius: 8px;
+			background: #07C88E;
+			color: #FFFFFF;
+			border: none;
+			cursor: pointer;
+			margin-top: 40px;
+			&:hover {
+				background: #0bb682;
+			}
+			&:active {
+				background: #0a9f72;
+			}
+		}
+		img {
+			float: right;
+			margin-top: -56px; // as content has 56px padding itself
+			&.stickRight {
+				margin-right: -55px;
+				padding-left: 55px;
+			}
+			@media (max-width: 750px) {
+				margin-left: -590px;
+			}
+		}
+	}
+	&Yellow {
+		@extend .slider;
+		background-color: #FFE48F;
+	}
+}
+
+.arrowL {
+	z-index: 1;
+	position: relative;
+	width: 44px;
+	height: 44px;
+	background-color: white;
+	border: none;
+	border-radius: 50px;
+	box-shadow: 0 4px 24px #000B261E;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	&:hover {
+		background-color: #f3f3f3;
+	}
+	&:active {
+		background-color: #e5e5e5;
+	}
+	top: -182px;
+	left: -22px;
+}
+
+.arrowR {
+	@extend .arrowL;
+	transform: rotate(180deg);
+	float: right;
+	left: 22px;
+}

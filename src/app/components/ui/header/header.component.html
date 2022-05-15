@@ -1,0 +1,22 @@
+<header>
+	<div class="container">
+		<div class="logo">
+			<img src="assets/logo.svg" alt="EcoRus logo"/>
+		</div>
+		<ul class="headLine">
+			<li *ngFor="let location of locations$">
+				<a [href]="location.path">{{location.label}}</a>
+			</li>
+		</ul>
+		<ul class="dynamic">
+			<li>
+				<img src="assets/mapPoint.svg" />
+				Казань
+			</li>
+			<li>
+				<img src="assets/login.svg" />
+				Войти
+			</li>
+		</ul>
+	</div>
+</header>

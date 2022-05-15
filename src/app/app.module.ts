@@ -12,12 +12,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderComponent } from "@components/ui/slider/slider.component";
+import { HeaderComponent } from '@components/ui/header/header.component';
+import { FooterComponent } from '@components/ui/footer/footer.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		HomeComponent
-	],
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        SliderComponent,
+		HeaderComponent,
+		FooterComponent
+    ],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
@@ -31,7 +38,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 			positionClass: 'toast-bottom-center'
 		}),
 		BrowserAnimationsModule,
-		ToastContainerModule
+		ToastContainerModule,
+		SwiperModule
 	],
 	providers: [
 		{
