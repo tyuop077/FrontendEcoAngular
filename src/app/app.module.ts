@@ -4,9 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from '@pages/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptorService } from '@services/auth-interceptor.service';
+import { ErrorInterceptorService } from '@services/error-interceptor.service';
+import { UrlInterceptorService } from '@services/url-interceptor.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -21,9 +25,31 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		FormsModule,
 		ReactiveFormsModule,
 		CommonModule,
-		BrowserAnimationsModule
+		ToastrModule.forRoot({
+			timeOut: 2500,
+			progressBar: true,
+			positionClass: 'toast-bottom-center'
+		}),
+		BrowserAnimationsModule,
+		ToastContainerModule
 	],
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: UrlInterceptorService,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptorService,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: ErrorInterceptorService,
+			multi: true
+		}
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
