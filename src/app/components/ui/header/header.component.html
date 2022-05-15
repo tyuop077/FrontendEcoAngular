@@ -5,7 +5,11 @@
 		</div>
 		<ul class="headLine">
 			<li *ngFor="let location of locations$">
-				<a [href]="location.path">{{location.label}}</a>
+				<a
+					[routerLink]="location.path"
+					routerLinkActive="current"
+					[routerLinkActiveOptions]="{exact: true}"
+				>{{location.label}}</a>
 			</li>
 		</ul>
 		<ul class="dynamic">

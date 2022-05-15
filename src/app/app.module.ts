@@ -16,6 +16,7 @@ import { SliderComponent } from "@components/ui/slider/slider.component";
 import { HeaderComponent } from '@components/ui/header/header.component';
 import { FooterComponent } from '@components/ui/footer/footer.component';
 import { SwiperModule } from 'swiper/angular';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { SwiperModule } from 'swiper/angular';
         HomeComponent,
         SliderComponent,
 		HeaderComponent,
-		FooterComponent
+		FooterComponent,
+  NotFoundComponent
     ],
 	imports: [
 		BrowserModule,
