@@ -4,10 +4,10 @@
 	background: #B3EDC8;
 	max-width: 1200px;
 	border-radius: 20px;
-	height: 320px;
 	transition: background-color 0.2s;
 	.content {
-		padding: 56px 55px 56px 64px;
+		min-height: 320px - 56px;
+		padding: 56px 0 0 64px;
 		h2 {
 			font-size: 48px;
 			line-height: 56px;
@@ -18,6 +18,7 @@
 			line-height: 24px;
 		}
 		button {
+			display: block;
 			padding: 12px 24px;
 			border-radius: 8px;
 			background: #07C88E;
@@ -33,7 +34,9 @@
 			}
 		}
 		img {
-			float: right;
+			position: absolute;
+			right: 0;
+			z-index: -1;
 			margin-top: -56px; // as content has 56px padding itself
 			&.stickRight {
 				margin-right: -55px;
@@ -41,6 +44,12 @@
 			}
 			@media (max-width: 750px) {
 				margin-left: -590px;
+			}
+		}
+		@media (max-width: 610px) {
+			padding: 30px 0 0 30px;
+			img {
+				margin-top: -30px;
 			}
 		}
 	}
@@ -69,6 +78,8 @@
 	}
 	top: -182px;
 	left: -22px;
+	margin-bottom: -44px;
+	float: left;
 }
 
 .arrowR {

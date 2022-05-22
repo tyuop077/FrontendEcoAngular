@@ -3,13 +3,15 @@
 		<div class="logo">
 			<img src="assets/ecoRus.svg" alt="EcoRus logo"/>
 		</div>
-		<ul class="headLine">
+		<ul class="selectors">
 			<li *ngFor="let location of locations$">
 				<a
 					[routerLink]="location.path"
 					routerLinkActive="current"
 					[routerLinkActiveOptions]="{exact: true}"
-				>{{location.label}}</a>
+				>
+					{{location.label}}
+				</a>
 			</li>
 		</ul>
 		<ul class="dynamic">
@@ -20,6 +22,9 @@
 			<li>
 				<img src="assets/login.svg" />
 				Войти
+			</li>
+			<li class="mobile">
+				<img src="assets/menu.svg" />
 			</li>
 		</ul>
 	</div>

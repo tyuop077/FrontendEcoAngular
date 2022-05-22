@@ -18,14 +18,3 @@ code {
 html, #root, body, root, .App {
 	height: 100%;
 }
-
-@media (max-width: 1270px) {
-	.App {
-		zoom: 0.8;
-	}
-}
-@media (max-width: 1000px) {
-	.App {
-		zoom: 0.7;
-	}
-}

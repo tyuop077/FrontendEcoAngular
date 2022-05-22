@@ -1,4 +1,4 @@
-@media (max-width: 750px) {
+@media (max-width: 830px) {
 	.blocks {
 		flex-wrap: wrap
 	}
@@ -9,6 +9,7 @@
 	gap: 24px;
 	height: 300px;
 	width: 100%;
+	margin-top: 48px;
 }
 
 .block {
@@ -44,4 +45,5 @@
 	bottom: 0;
 	right: 0;
 	margin-right: -40px;
+	margin-left: -314px;
 }
