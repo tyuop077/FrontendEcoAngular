@@ -14,9 +14,10 @@ export class UrlInterceptorService implements HttpInterceptor {
 		return next.handle(
 			request.clone({
 				url:
-					request.url.startsWith('https') ||
-					request.url.startsWith('/') ||
-					request.context.get(StartsWithHttp)
+					request.url.startsWith("https") ||
+					request.url.startsWith("/") ||
+					request.context.get(StartsWithHttp) ||
+					request.url.endsWith(".svg")
 						? request.url
 						: [environment.apiUrl, request.url].join('/'),
 			}),

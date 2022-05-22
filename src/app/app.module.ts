@@ -16,7 +16,8 @@ import { SliderComponent } from "@components/ui/slider/slider.component";
 import { HeaderComponent } from '@components/ui/header/header.component';
 import { FooterComponent } from '@components/ui/footer/footer.component';
 import { SwiperModule } from 'swiper/angular';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NotFoundComponent } from '@pages/not-found/not-found.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
     declarations: [
@@ -41,7 +42,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 		}),
 		BrowserAnimationsModule,
 		ToastContainerModule,
-		SwiperModule
+		SwiperModule,
+		AngularSvgIconModule.forRoot()
 	],
 	providers: [
 		{
