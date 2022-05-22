@@ -7,7 +7,6 @@
 .blocks {
 	display: flex;
 	gap: 24px;
-	min-height: 300px;
 	width: 100%;
 	margin-top: 48px;
 }
@@ -18,13 +17,15 @@
 	padding: 40px;
 	width: 100%;
 	background-color: white;
+	height: 300px - 80px;
 	h1 {
 		margin: 0;
 	}
 	p {
-		width: 275px;
+		max-width: 275px;
 		color: #000B268E;
 	}
+	overflow: hidden;
 	button {
 		width: 48px;
 		height: 48px;

@@ -8,6 +8,9 @@ header {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	@media (max-width: 405px) {
+		zoom: 0.8;
+	}
 }
 
 .container {

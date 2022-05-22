@@ -1,6 +1,6 @@
 footer {
 	position: relative;
-	height: 64px;
+	min-height: 64px;
 	width: 100%;
 	background-color: white;
 	left: 0;
@@ -21,12 +21,23 @@ footer {
 
 .contacts {
 	display: flex;
-	gap: 30px;
+	column-gap: 30px;
+	row-gap: 12px;
+	flex-wrap: wrap;
 	span {
 		padding-left: 10px;
 	}
 	div {
 		display: flex;
 		align-items: center;
+	}
+}
+
+@media (max-width: 650px) {
+	.contacts {
+		justify-content: center;
+	}
+	.container {
+		padding: 24px 10px;
 	}
 }
