@@ -7,7 +7,7 @@
 .blocks {
 	display: flex;
 	gap: 24px;
-	height: 300px;
+	min-height: 300px;
 	width: 100%;
 	margin-top: 48px;
 }
