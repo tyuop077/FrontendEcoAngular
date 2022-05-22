@@ -17,6 +17,7 @@
 	border-radius: 16px;
 	padding: 40px;
 	width: 100%;
+	background-color: white;
 	h1 {
 		margin: 0;
 	}
@@ -46,4 +47,17 @@
 	right: 0;
 	margin-right: -40px;
 	margin-left: -314px;
+}
+
+@media (max-width: 650px) {
+	.blocks {
+		padding-top: 311px;
+	}
+	.block {
+		z-index: 1;
+		h1 {
+			font-size: 24px;
+			line-height: 28px;
+		}
+	}
 }

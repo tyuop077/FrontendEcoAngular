@@ -38,18 +38,13 @@
 			right: 0;
 			z-index: -1;
 			margin-top: -56px; // as content has 56px padding itself
+			//max-width: 100%;
 			&.stickRight {
 				margin-right: -55px;
 				padding-left: 55px;
 			}
 			@media (max-width: 750px) {
 				margin-left: -590px;
-			}
-		}
-		@media (max-width: 610px) {
-			padding: 30px 0 0 30px;
-			img {
-				margin-top: -30px;
 			}
 		}
 	}
@@ -87,4 +82,33 @@
 	transform: rotate(180deg);
 	float: right;
 	left: 22px;
+}
+
+@media (max-width: 650px) {
+	.slider {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin-top: -35px;
+		border-radius: 0;
+		.content {
+			padding: 24px 16px;
+			height: 425px;
+			button {
+				width: 100%;
+				padding: 12px 24px;
+			}
+			img {
+				//bottom: -40px;
+				margin-top: 160px;
+			}
+			h2 {
+				font-size: 24px;
+				line-height: 28px;
+			}
+		}
+	}
+	.arrowL {
+		display: none;
+	}
 }
