@@ -18,6 +18,8 @@ import { FooterComponent } from '@components/ui/footer/footer.component';
 import { SwiperModule } from 'swiper/angular';
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { RecyclingPointsComponent } from '@pages/recycling-points/recycling-points.component';
+import { MapComponent } from '@components/ui/map/map.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,9 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
         SliderComponent,
 		HeaderComponent,
 		FooterComponent,
-  NotFoundComponent
+		NotFoundComponent,
+		RecyclingPointsComponent,
+  MapComponent
     ],
 	imports: [
 		BrowserModule,
