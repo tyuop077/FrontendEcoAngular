@@ -20,6 +20,7 @@ import { NotFoundComponent } from '@pages/not-found/not-found.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { RecyclingPointsComponent } from '@pages/recycling-points/recycling-points.component';
 import { MapComponent } from '@components/ui/map/map.component';
+import { MarketComponent } from '@pages/market/market.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { MapComponent } from '@components/ui/map/map.component';
 		FooterComponent,
 		NotFoundComponent,
 		RecyclingPointsComponent,
-  MapComponent
+		MapComponent,
+		MarketComponent
     ],
 	imports: [
 		BrowserModule,

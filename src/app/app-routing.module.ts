@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '@pages/home/home.component';
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
 import { RecyclingPointsComponent } from '@pages/recycling-points/recycling-points.component';
+import { MarketComponent } from '@pages/market/market.component';
 
 const routes: Routes = [
 	{
@@ -12,6 +13,10 @@ const routes: Routes = [
 	{
 		path: "points",
 		component: RecyclingPointsComponent
+	},
+	{
+		path: "market",
+		component: MarketComponent
 	},
 	{
 		path: "**",
