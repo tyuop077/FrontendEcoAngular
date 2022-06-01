@@ -1,0 +1,25 @@
+<div class="items">
+	<div class="promo">
+		<div class="convert">
+			<p>
+				<span>На вашем балансе</span>
+				<svg-icon src="assets/ecoCoin.svg"></svg-icon>
+				<b>200</b>
+			</p>
+			<span>Вы можете обменять их на скидку 200 руб.</span>
+		</div>
+		<button>Получить промокод</button>
+	</div>
+	<div class="items" *ngFor="let item of items$ | async">
+		<div class="cover">
+			<span>{{item.brand}}</span>
+			<img [src]="item.image_url" [alt]="item.name" />
+		</div>
+		<b>{{item.name}}</b>
+		<span>{{item.label}}</span>
+		<div class="price">
+			<svg-icon src="assets/ecoCoin.svg"></svg-icon>
+			{{item.price}}
+		</div>
+	</div>
+</div>

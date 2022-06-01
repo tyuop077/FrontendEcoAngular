@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CollecionPointsMock } from '../mocks/collectionPoints';
+import { CollecionPointsMock } from '@mocks/collectionPoints';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class CollectionPointsService {
-
 	points$ = new BehaviorSubject<RecyclingPoint[]>(CollecionPointsMock);
 
 	constructor() { }

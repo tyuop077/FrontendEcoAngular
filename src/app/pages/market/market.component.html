@@ -13,17 +13,10 @@
 		</div>
 		<button>Сбросить фильтры</button>
 	</div>
-	<div class="items">
-		<div class="promo">
-			<div class="convert">
-				<p>
-					<span>На вашем балансе</span>
-					<svg-icon src="assets/ecoCoin.svg"></svg-icon>
-					<b>200</b>
-				</p>
-				<span>Вы можете обменять их на скидку 200 руб.</span>
-			</div>
-			<button>Получить промокод</button>
-		</div>
-	</div>
+	<app-market-items
+		[sort]="sort$"
+		[gender]="gender$"
+		[categories]="categories$"
+		[shops]="shops$"
+	></app-market-items>
 </div>

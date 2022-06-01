@@ -21,6 +21,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { RecyclingPointsComponent } from '@pages/recycling-points/recycling-points.component';
 import { MapComponent } from '@components/ui/map/map.component';
 import { MarketComponent } from '@pages/market/market.component';
+import { MarketItemsComponent } from '@components/ui/market-items/market-items.component';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { MarketComponent } from '@pages/market/market.component';
 		NotFoundComponent,
 		RecyclingPointsComponent,
 		MapComponent,
-		MarketComponent
+		MarketComponent,
+		MarketItemsComponent
     ],
 	imports: [
 		BrowserModule,
