@@ -19,10 +19,10 @@ export const CollecionPointsMock: RecyclingPoint[] = [
 		]
 	},
 	{
-		address: "ул.Кремлёвская, 88",
+		address: "ул.Кремлёвская, 35",
 		accepts: "Стекло, бумага, металл, старая одежда, батареи",
 		image_src: "assets/recyclingPoint.png",
-		phone_number: "+7 (917) 888 88 88",
+		phone_number: "+7 (843) 292 73 40",
 		hours: { "Пн - Пт": "08:00 - 20:00", "Сб - Вс": "10:00 - 18:00" },
 		companies: [
 			{
@@ -36,10 +36,10 @@ export const CollecionPointsMock: RecyclingPoint[] = [
 		]
 	},
 	{
-		address: "ул.Кремлёвская, 88",
+		address: "ул.Кремлёвская, 29",
 		accepts: "Пластик, стекло, бумага, металл",
 		image_src: "assets/recyclingPoint.png",
-		phone_number: "+7 (917) 888 88 88",
+		phone_number: "+7 (843) 233 74 16",
 		hours: { "Пн - Пт": "08:00 - 20:00", "Сб - Вс": "10:00 - 18:00" },
 		companies: [
 			{
@@ -53,10 +53,10 @@ export const CollecionPointsMock: RecyclingPoint[] = [
 		]
 	},
 	{
-		address: "ул.Кремлёвская, 88",
+		address: "ул.Кремлёвская, 18",
 		accepts: "Стекло, бумага, металл, старая одежда, батареи",
 		image_src: "assets/recyclingPoint.png",
-		phone_number: "+7 (917) 888 88 88",
+		phone_number: "+7 (843) 292 73 40",
 		hours: { "Пн - Пт": "08:00 - 20:00", "Сб - Вс": "10:00 - 18:00" },
 		companies: [
 			{
