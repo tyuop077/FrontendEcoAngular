@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { MarketService } from '@services/market.service';
-import { BehaviorSubject, combineLatest, Subscription } from 'rxjs';
+import { MarketItem, MarketService } from '@services/market.service';
+import { BehaviorSubject, combineLatest, Observable, Subscription } from 'rxjs';
 import { MarketPreviewGenerator } from '@utils/market-preview-generator';
 
 @Component({
@@ -18,15 +18,16 @@ export class MarketItemsComponent implements OnInit {
 	@Input("categories") categories$!: BehaviorSubject<string[]>;
 	@Input("shops") shops$!: BehaviorSubject<string[]>;
 
-	private data = combineLatest([
-		this.marketService.items$, this.sort$, this.gender$, this.categories$, this.shops$
-	]);
+	private data!: Observable<[MarketItem[], number, "MAN" | "WOMAN" | "", string[], string[]]>;
 
 	calculationSubscription$!: Subscription;
 
 	items$ = new BehaviorSubject<MarketItemPreview[]>([]);
 
 	ngOnInit() {
+		this.data = combineLatest([
+			this.marketService.items$, this.sort$, this.gender$, this.categories$, this.shops$
+		]);
 		this.calculationSubscription$ = this.data
 			.subscribe(([items, sort, gender, categories, shops]) => {
 				this.items$.next(items.filter(i => (

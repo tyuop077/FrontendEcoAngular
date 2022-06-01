@@ -10,7 +10,7 @@
 		</div>
 		<button>Получить промокод</button>
 	</div>
-	<div class="items" *ngFor="let item of items$ | async">
+	<div class="item" *ngFor="let item of items$ | async">
 		<div class="cover">
 			<span>{{item.brand}}</span>
 			<img [src]="item.image_url" [alt]="item.name" />
