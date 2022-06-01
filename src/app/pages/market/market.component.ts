@@ -19,4 +19,8 @@ export class MarketComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
+	setSort(index: number) {
+		this.sort$.next(index);
+	}
+
 }

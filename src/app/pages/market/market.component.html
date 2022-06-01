@@ -1,9 +1,9 @@
 <div class="titleBar">
 	<h1>ЭкоМаркет</h1>
 	<div class="sortPicker">
-		<button class="active">По популярности</button>
-		<button>По цене</button>
-		<button>По новизне</button>
+		<button (click)="setSort(0)" [class.active] = '(sort$ | async) === 0'>По популярности</button>
+		<button (click)="setSort(1)" [class.active] = '(sort$ | async) === 1'>По цене</button>
+		<button (click)="setSort(2)" [class.active] = '(sort$ | async) === 2'>По новизне</button>
 	</div>
 </div>
 <div class="market">
