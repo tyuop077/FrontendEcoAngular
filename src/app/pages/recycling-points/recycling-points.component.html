@@ -24,11 +24,37 @@
 	</select>
 </div>
 <div class="container">
-	<div class="collections">
-		<div *ngFor="let point of points$ | async">
+	<div class="collections" *ngIf="selected === null; else pointDescription">
+		<div *ngFor="let point of points$ | async; index as i" (click)="openPointDescription(i)">
 			<img [src]="point.image_src" alt="Recycling point" />
 			<b>{{point.address}}</b>
 			<span>{{point.accepts}}</span>
 		</div>
 	</div>
 </div>
+
+<ng-template #pointDescription>
+	<div class="showcase" *ngIf="(points$ | async)![selected ?? -1] as point">
+		<div class="back" (click)="closePointDescription()">
+			<svg-icon src="assets/arrowLeft.svg"></svg-icon>
+			Вернуться назад
+		</div>
+		<div class="card">
+			<img [src]="point.image_src" alt="Recycling point" />
+			<div class="info">
+				<b>{{point.address}}</b>
+				<p>{{point.phone_number}}</p>
+				<div class="time" *ngFor="let time of point.hours | keyvalue">
+					<span>{{time.key}}</span>
+					<span>{{time.value}}</span>
+				</div>
+				<div class="tags" *ngFor="let company of point.companies">
+					<b>{{company.name}}</b>
+					<span *ngFor="let accepts of company.accepts">
+						{{accepts}}
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>

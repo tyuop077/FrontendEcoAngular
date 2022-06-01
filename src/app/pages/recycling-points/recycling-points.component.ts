@@ -12,8 +12,17 @@ export class RecyclingPointsComponent implements OnInit {
 	constructor(private collectionPointsService: CollectionPointsService) { }
 
 	points$ = this.collectionPointsService.points$;
+	selected: number | null = null;
 
 	ngOnInit(): void {
+	}
+
+	openPointDescription(index: number) {
+		this.selected = index
+	}
+
+	closePointDescription() {
+		this.selected = null
 	}
 
 }
