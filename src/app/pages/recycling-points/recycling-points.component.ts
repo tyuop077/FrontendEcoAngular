@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CollectionPointsService } from '@services/collection-points.service';
 
 @Component({
   selector: 'app-recycling-points',
@@ -8,7 +9,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class RecyclingPointsComponent implements OnInit {
 
-	constructor() { }
+	constructor(private collectionPointsService: CollectionPointsService) { }
+
+	points$ = this.collectionPointsService.points$;
 
 	ngOnInit(): void {
 	}

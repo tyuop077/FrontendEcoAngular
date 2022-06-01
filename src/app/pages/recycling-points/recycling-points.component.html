@@ -13,49 +13,22 @@
 	</select>
 	<select name="materials">
 		<option value="info" disabled selected>Материалы</option>
+		<option value="all">Выбрать все</option>
+		<option value="0">Пластик</option>
+		<option value="1">Обувь</option>
+		<option value="2">Старая одежда</option>
+		<option value="3">Стекло</option>
+		<option value="4">Бумага</option>
+		<option value="5">Металл</option>
+		<option value="6">Батарейка</option>
 	</select>
 </div>
 <div class="container">
 	<div class="collections">
-		<div>
-			<img src="assets/recyclingPoint.png" alt="Recycling point" />
-			<b>ул.Кремлёвская, 88</b>
-			<span>Пластик, стекло, бумага, металл, старая одежда, батареи, аккумуляторы...</span>
-		</div>
-		<div>
-			<img src="assets/recyclingPoint.png" alt="Recycling point" />
-			<b>ул.Кремлёвская, 88</b>
-			<span>Стекло, бумага, металл, старая одежда, батареи</span>
-		</div>
-		<div>
-			<img src="assets/recyclingPoint.png" alt="Recycling point" />
-			<b>ул.Кремлёвская, 88</b>
-			<span>Пластик, стекло, бумага, металл</span>
-		</div>
-		<div>
-			<img src="assets/recyclingPoint.png" alt="Recycling point" />
-			<b>ул.Кремлёвская, 88</b>
-			<span>Стекло, бумага, металл, старая одежда, батареи</span>
-		</div>
-		<div>
-			<img src="assets/recyclingPoint.png" alt="Recycling point" />
-			<b>ул.Кремлёвская, 88</b>
-			<span>Пластик, стекло, бумага, металл, старая одежда, батареи, аккумуляторы...</span>
-		</div>
-		<div>
-			<img src="assets/recyclingPoint.png" alt="Recycling point" />
-			<b>ул.Кремлёвская, 88</b>
-			<span>Стекло, бумага, металл, старая одежда, батареи</span>
-		</div>
-		<div>
-			<img src="assets/recyclingPoint.png" alt="Recycling point" />
-			<b>ул.Кремлёвская, 88</b>
-			<span>Пластик, стекло, бумага, металл</span>
-		</div>
-		<div>
-			<img src="assets/recyclingPoint.png" alt="Recycling point" />
-			<b>ул.Кремлёвская, 88</b>
-			<span>Стекло, бумага, металл, старая одежда, батареи</span>
+		<div *ngFor="let point of points$ | async">
+			<img [src]="point.image_src" alt="Recycling point" />
+			<b>{{point.address}}</b>
+			<span>{{point.accepts}}</span>
 		</div>
 	</div>
 </div>
