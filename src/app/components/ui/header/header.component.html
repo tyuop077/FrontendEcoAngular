@@ -14,7 +14,7 @@
 				</a>
 			</li>
 		</ul>
-		<ul class="dynamic">
+		<ul class="dynamic" *ngIf="!cache$; else authorized">
 			<li>
 				<svg-icon src="assets/mapPoint.svg"></svg-icon>
 				Казань
@@ -29,3 +29,23 @@
 		</ul>
 	</div>
 </header>
+
+<ng-template #authorized>
+	<div class="dynamic">
+		<li>
+			<svg-icon src="assets/mapPoint.svg"></svg-icon>
+			Казань
+		</li>
+		<li>
+			<svg-icon src="assets/ecoCoin.svg"></svg-icon>
+			<b>{{cache$.balance}}</b>
+		</li>
+		<li>
+			<img [src]="cache$.avatar_url ?? 'assets/defaultAvatar.png'" alt="Изображение профиля" />
+			{{cache$.display_name}}
+		</li>
+		<li class="mobile">
+			<svg-icon src="assets/menu.svg"></svg-icon>
+		</li>
+	</div>
+</ng-template>

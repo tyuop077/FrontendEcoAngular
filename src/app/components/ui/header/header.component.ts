@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { storageService } from '@utils/local-storage';
 
 @Component({
 	selector: 'app-header',
@@ -9,6 +10,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
 	constructor() {}
+
+	cache$ = storageService.getStorageValue("user_cache");
 
 	ngOnInit(): void {
 	}
