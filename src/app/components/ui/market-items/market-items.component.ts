@@ -31,7 +31,7 @@ export class MarketItemsComponent implements OnInit {
 		this.calculationSubscription$ = this.data
 			.subscribe(([items, sort, gender, categories, shops]) => {
 				this.items$.next(items.filter(i => (
-					(gender.length === 0 || gender.includes(i.gender)) &&
+					(gender.length === 0 || gender.includes(i.gender) || i.gender === "") &&
 					(categories.length === 0 || categories.includes(i.type)) &&
 					(shops.length === 0 || shops.includes(i.brand))
 				)).sort((a, b) => (

@@ -1,4 +1,14 @@
 <div class="selector" *ngIf="selected$ | async as selected">
+	<div>
+		<input
+			type="checkbox"
+			[id]="id$ ? 'all_' + id$ : 'all'"
+			[checked]="selected.length === (choices$ | keyvalue).length"
+			*ngIf="(choices$ | keyvalue).length as length$"
+			(change)="selectAll(selected.length !== length$)"
+		/>
+		<label [for]="id$ ? 'all_' + id$ : 'all'">Выбрать всё</label>
+	</div>
 	<div *ngFor="let item of choices$ | keyvalue">
 		<input
 			type="checkbox"

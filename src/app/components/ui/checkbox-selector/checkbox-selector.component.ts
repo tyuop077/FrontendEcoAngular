@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -13,6 +13,7 @@ export class CheckboxSelectorComponent implements OnInit {
 
 	@Input("choices") choices$!: Record<string, string>;
 	@Input("selected") selected$!: BehaviorSubject<string[]>;
+	@Input("id") id$?: string;
 
 	ngOnInit(): void {
 	}
@@ -24,6 +25,14 @@ export class CheckboxSelectorComponent implements OnInit {
 			const set = new Set(current);
 			set.delete(key);
 			this.selected$.next(Array.from(set));
+		}
+	}
+
+	selectAll(toggled: boolean) {
+		if (toggled) {
+			this.selected$.next(Object.keys(this.choices$))
+		} else {
+			this.selected$.next([]);
 		}
 	}
 
