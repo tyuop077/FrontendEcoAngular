@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { storageService } from '@utils/local-storage';
 import { DialogService } from '@services/dialog.service';
-import { ExampleDialogComponent } from '@components/modals/example-dialog/example-dialog.component';
+import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
 
 @Component({
 	selector: 'app-header',
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 	]
 
 	openExampleDialog() {
-		this.dialog.openDialog(ExampleDialogComponent);
+		this.dialog.openDialog(SignInModalComponent);
 	}
 
 }

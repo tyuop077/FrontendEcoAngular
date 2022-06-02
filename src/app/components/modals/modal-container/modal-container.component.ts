@@ -5,7 +5,7 @@ import { Portal } from '@angular/cdk/portal';
 @Component({
 	selector: 'app-modal-container',
 	templateUrl: './modal-container.component.html',
-	styleUrls: ['./modal-container.component.sass'],
+	styleUrls: ['./modal-container.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModalContainerComponent extends CdkDialogContainer {

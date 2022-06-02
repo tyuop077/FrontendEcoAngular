@@ -1,0 +1,24 @@
+<div class="titleBar">
+	<h1>Вход</h1>
+	<svg-icon src="assets/close.svg" (click)="close()"></svg-icon>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+	<input
+		type="tel"
+		placeholder="Телефон"
+		formControlName="phone"
+	/>
+	<input
+		type="password"
+		placeholder="Пароль"
+		formControlName="password"
+	/>
+	<button type="submit" [disabled]="!form.valid">Войти</button>
+	{{form.status}}
+	{{form.getRawValue() | json}}
+	<div class="choices">
+		<a href="#">Войти с помощью смс</a>
+		<a href="#">Регистрация</a>
+	</div>
+	<button class="alternative">Вход для партнёров</button>
+</form>

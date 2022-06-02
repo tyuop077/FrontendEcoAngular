@@ -24,3 +24,9 @@ html, #root, body, root, .App {
 .leaflet-control-attribution {
 	display: none;
 }
+
+@media (max-width: 550px) {
+	.cdk-overlay-backdrop {
+		background-color: #ffffff;
+	}
+}

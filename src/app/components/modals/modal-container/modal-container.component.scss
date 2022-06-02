@@ -1,0 +1,22 @@
+$c-light-shadow: #E5EAF2;
+
+:host {
+	padding: 24px;
+	background: white;
+	outline: none;
+	max-height: 100vh;
+	overflow: auto;
+	border-radius: 26px;
+	min-width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	::ng-deep {
+		& > * {
+			display: block
+		}
+	}
+	@media (min-width: 550px) {
+		box-shadow: 0 24px 48px rgba($c-light-shadow, 0.4);
+	}
+}
