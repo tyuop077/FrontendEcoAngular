@@ -8,14 +8,14 @@
 		placeholder="Телефон"
 		formControlName="phone"
 	/>
+	<span class="error">{{phoneError}}</span>
 	<input
 		type="password"
 		placeholder="Пароль"
 		formControlName="password"
 	/>
+	<span class="error">{{passwordError}}</span>
 	<button type="submit" [disabled]="!form.valid">Войти</button>
-	{{form.status}}
-	{{form.getRawValue() | json}}
 	<div class="choices">
 		<a href="#">Войти с помощью смс</a>
 		<a href="#">Регистрация</a>
