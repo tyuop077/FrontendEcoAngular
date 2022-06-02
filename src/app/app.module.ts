@@ -22,7 +22,12 @@ import { RecyclingPointsComponent } from '@pages/recycling-points/recycling-poin
 import { MapComponent } from '@components/ui/map/map.component';
 import { MarketComponent } from '@pages/market/market.component';
 import { MarketItemsComponent } from '@components/ui/market-items/market-items.component';
-import { CheckboxSelectorComponent } from './components/ui/checkbox-selector/checkbox-selector.component';
+import { CheckboxSelectorComponent } from '@components/ui/checkbox-selector/checkbox-selector.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
+import { ExampleDialogComponent } from '@components/modals/example-dialog/example-dialog.component';
+import { DialogModule } from '@angular/cdk-experimental/dialog';
+import { ModalContainerComponent } from '@components/modals/modal-container/modal-container.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +41,9 @@ import { CheckboxSelectorComponent } from './components/ui/checkbox-selector/che
 		MapComponent,
 		MarketComponent,
 		MarketItemsComponent,
-  CheckboxSelectorComponent
+		CheckboxSelectorComponent,
+		ExampleDialogComponent,
+		ModalContainerComponent
     ],
 	imports: [
 		BrowserModule,
@@ -53,7 +60,10 @@ import { CheckboxSelectorComponent } from './components/ui/checkbox-selector/che
 		BrowserAnimationsModule,
 		ToastContainerModule,
 		SwiperModule,
-		AngularSvgIconModule.forRoot()
+		AngularSvgIconModule.forRoot(),
+		DialogModule,
+		OverlayModule,
+		PortalModule
 	],
 	providers: [
 		{

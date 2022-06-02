@@ -3,6 +3,7 @@
 @import '~ngx-toastr/toastr';
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import '../node_modules/leaflet/dist/leaflet.css';
+@import '~@angular/cdk/overlay-prebuilt.css';
 
 body {
 	margin: 0;

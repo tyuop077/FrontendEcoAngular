@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { storageService } from '@utils/local-storage';
+import { DialogService } from '@services/dialog.service';
+import { ExampleDialogComponent } from '@components/modals/example-dialog/example-dialog.component';
 
 @Component({
 	selector: 'app-header',
@@ -9,7 +11,7 @@ import { storageService } from '@utils/local-storage';
 })
 export class HeaderComponent implements OnInit {
 
-	constructor() {}
+	constructor(private dialog: DialogService) {}
 
 	cache$ = storageService.getStorageValue("user_cache");
 
@@ -22,5 +24,9 @@ export class HeaderComponent implements OnInit {
 		{label: "ЭкоМаркет", path: "/market"},
 		{label: "О сервисе", path: "/about"}
 	]
+
+	openExampleDialog() {
+		this.dialog.openDialog(ExampleDialogComponent);
+	}
 
 }
