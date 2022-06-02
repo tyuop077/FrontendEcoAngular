@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogRef } from '@angular/cdk-experimental/dialog';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { APIService } from '@services/api.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
 	selector: 'app-sign-in-modal',
@@ -11,7 +13,11 @@ import { Validators } from '@angular/forms';
 })
 export class SignInModalComponent implements OnInit {
 
-	constructor(private dialogRef: DialogRef<SignInModalComponent>, private fb: FormBuilder) {
+	constructor(
+		private dialogRef: DialogRef<SignInModalComponent>,
+		private fb: FormBuilder,
+		private API: APIService
+	) {
 		this.form = this.fb.group({
 			phone: new FormControl("", [
 				Validators.required, Validators.pattern(/\+?\d+/)
@@ -23,6 +29,7 @@ export class SignInModalComponent implements OnInit {
 	}
 
 	form: FormGroup;
+	isLoading$ = new BehaviorSubject<boolean>(false);
 
 	ngOnInit(): void {
 	}
@@ -32,7 +39,15 @@ export class SignInModalComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-		alert(JSON.stringify(this.form.value))
+		this.isLoading$.next(true);
+		this.API.login(this.form.value.phone, this.form.value.password).subscribe(
+			next => {
+				this.isLoading$.next(false);
+			},
+			error => {
+				this.isLoading$.next(false);
+			}
+		)
 	}
 
 	get phoneError() {

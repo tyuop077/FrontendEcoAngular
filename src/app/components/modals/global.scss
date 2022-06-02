@@ -40,11 +40,13 @@
 	background: #3E507214;
 	color: #000B26CC;
 	margin-top: 32px;
-	&:hover {
-		background: #3E50721E;
-	}
-	&:active {
-		background: #3E507233;
+	&:enabled {
+		&:hover {
+			background: #3E50721E;
+		}
+		&:active {
+			background: #3E507233;
+		}
 	}
 }
 

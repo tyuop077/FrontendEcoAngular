@@ -1,7 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { storageService } from '@utils/local-storage';
+import { LocalStorage } from '@utils/local-storage';
 import { DialogService } from '@services/dialog.service';
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
+import { UserSessionCache } from '@services/session.service';
 
 @Component({
 	selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
 	constructor(private dialog: DialogService) {}
 
-	cache$ = storageService.getStorageValue("user_cache");
+	@LocalStorage(true, "user_cache") cache$?: UserSessionCache;
 
 	ngOnInit(): void {
 	}

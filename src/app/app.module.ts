@@ -29,6 +29,8 @@ import { ExampleDialogComponent } from '@components/modals/example-dialog/exampl
 import { DialogModule } from '@angular/cdk-experimental/dialog';
 import { ModalContainerComponent } from '@components/modals/modal-container/modal-container.component';
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
+import { SessionService } from '@services/session.service';
+import { LoaderComponent } from '@components/ui/loader/loader.component';
 
 @NgModule({
     declarations: [
@@ -45,7 +47,8 @@ import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-m
 		CheckboxSelectorComponent,
 		ExampleDialogComponent,
 		ModalContainerComponent,
-		SignInModalComponent
+		SignInModalComponent,
+		LoaderComponent
     ],
 	imports: [
 		BrowserModule,
@@ -81,6 +84,11 @@ import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-m
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: ErrorInterceptorService,
+			multi: true
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: SessionService,
 			multi: true
 		}
 	],

@@ -15,10 +15,16 @@
 		formControlName="password"
 	/>
 	<span class="error">{{passwordError}}</span>
-	<button type="submit" [disabled]="!form.valid">Войти</button>
+	<button *ngIf="!(isLoading$ | async); else loader" type="submit" [disabled]="!form.valid">Войти</button>
 	<div class="choices">
 		<a href="#">Войти с помощью смс</a>
 		<a href="#">Регистрация</a>
 	</div>
-	<button class="alternative">Вход для партнёров</button>
+	<button type="button" class="alternative">Вход для партнёров</button>
 </form>
+
+<ng-template #loader>
+	<div class="center">
+		<app-loader></app-loader>
+	</div>
+</ng-template>

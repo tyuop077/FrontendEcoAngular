@@ -38,11 +38,11 @@
 		</li>
 		<li>
 			<svg-icon src="assets/ecoCoin.svg"></svg-icon>
-			<b>{{cache$.balance}}</b>
+			<b>{{cache$!.balance}}</b>
 		</li>
 		<li>
-			<img [src]="cache$.avatar_url ?? 'assets/defaultAvatar.png'" alt="Изображение профиля" />
-			{{cache$.display_name}}
+			<img [src]="cache$!.avatar_url ?? 'assets/defaultAvatar.png'" alt="Изображение профиля" />
+			{{cache$!.display_name}}
 		</li>
 		<li class="mobile">
 			<svg-icon src="assets/menu.svg"></svg-icon>

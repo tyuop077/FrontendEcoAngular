@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpContextToken, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {
+	HttpContextToken, HttpErrorResponse,
+	HttpEvent,
+	HttpHandler,
+	HttpInterceptor,
+	HttpRequest,
+	HttpResponse
+} from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
 import { environment } from '@environments/environment';
 
 export const StartsWithHttp = new HttpContextToken<boolean>(() => false);
@@ -21,6 +28,19 @@ export class UrlInterceptorService implements HttpInterceptor {
 						? request.url
 						: [environment.apiUrl, request.url].join('/'),
 			}),
+		).pipe(
+			tap(
+				(event) => {
+					if (event instanceof HttpResponse)
+						console.log(`Server response ${event.url}`)
+				},
+				(err) => {
+					if (err instanceof HttpErrorResponse) {
+						if (err.status == 401)
+							console.log('Unauthorized')
+					}
+				}
+			)
 		);
 	}
 }
