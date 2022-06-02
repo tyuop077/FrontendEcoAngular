@@ -7,7 +7,7 @@ import {
 	HttpRequest,
 	HttpResponse
 } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { LocalStorage } from '@utils/local-storage';
 import { ToastService } from '@services/toast.service';
 import { environment } from '@environments/environment';
@@ -17,10 +17,14 @@ import { Dialog } from '@angular/cdk-experimental/dialog';
 	providedIn: 'root'
 })
 export class SessionService implements HttpInterceptor {
-	@LocalStorage() token?: string;
-	@LocalStorage(true, "user_cache") cache?: UserSessionCache;
+	@LocalStorage() private token?: string;
+	@LocalStorage(true, "user_cache") private cache?: UserSessionCache;
 
-	constructor(private toast: ToastService, private dialog: Dialog) { }
+	isAuthorized$ = new BehaviorSubject<boolean>(Boolean(this.cache));
+
+	constructor(private toast: ToastService, private dialog: Dialog) {
+		this.isAuthorized$.subscribe(v => console.log("session.service.ts", v))
+	}
 
 	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		if (!request.url.startsWith(environment.apiUrl)) return next.handle(request);
@@ -44,7 +48,8 @@ export class SessionService implements HttpInterceptor {
 							display_name: body.firstname ?? body.username ?? body.email,
 							avatar_url: body.photo_url,
 							balance: body.balance ?? 0
-						}
+						};
+						this.isAuthorized$.next(true);
 						this.toast.success(`Авторизован как ${this.cache.display_name}`);
 						this.dialog.closeAll();
 					}

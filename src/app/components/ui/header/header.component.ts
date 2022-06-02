@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { LocalStorage } from '@utils/local-storage';
 import { DialogService } from '@services/dialog.service';
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
-import { UserSessionCache } from '@services/session.service';
+import { SessionService, UserSessionCache } from '@services/session.service';
 
 @Component({
 	selector: 'app-header',
@@ -12,11 +12,13 @@ import { UserSessionCache } from '@services/session.service';
 })
 export class HeaderComponent implements OnInit {
 
-	constructor(private dialog: DialogService) {}
+	constructor(private dialog: DialogService, private session: SessionService) {}
 
 	@LocalStorage(true, "user_cache") cache$?: UserSessionCache;
+	isAuthorized$ = this.session.isAuthorized$;
 
 	ngOnInit(): void {
+		this.isAuthorized$.subscribe(v => console.log("header.component.ts", v))
 	}
 
 	locations$ = [

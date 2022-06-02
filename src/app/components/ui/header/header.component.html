@@ -14,7 +14,7 @@
 				</a>
 			</li>
 		</ul>
-		<ul class="dynamic" *ngIf="!cache$; else authorized">
+		<ul class="dynamic" *ngIf="!(isAuthorized$ | async); else authorized">
 			<li>
 				<svg-icon src="assets/mapPoint.svg"></svg-icon>
 				Казань
