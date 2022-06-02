@@ -4,6 +4,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { APIService } from '@services/api.service';
 import { BehaviorSubject } from 'rxjs';
+import { DialogService } from '@services/dialog.service';
+import { RegisterModalComponent } from '@components/modals/register-modal/register-modal.component';
 
 @Component({
 	selector: 'app-sign-in-modal',
@@ -16,7 +18,8 @@ export class SignInModalComponent implements OnInit {
 	constructor(
 		private dialogRef: DialogRef<SignInModalComponent>,
 		private fb: FormBuilder,
-		private API: APIService
+		private API: APIService,
+		private dialog: DialogService
 	) {
 		this.form = this.fb.group({
 			phone: new FormControl("", [
@@ -36,6 +39,11 @@ export class SignInModalComponent implements OnInit {
 
 	close(): void {
 		this.dialogRef.close(true);
+	}
+
+	openRegisterModal() {
+		this.close();
+		this.dialog.openDialog(RegisterModalComponent);
 	}
 
 	onSubmit(): void {

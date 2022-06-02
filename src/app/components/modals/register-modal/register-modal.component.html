@@ -1,0 +1,57 @@
+<div class="titleBar">
+	<h1>Регистрация</h1>
+	<svg-icon src="assets/close.svg" (click)="close()"></svg-icon>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+	<input
+		type="email"
+		placeholder="Email"
+		formControlName="email"
+	/>
+	<div class="error">
+		<span *ngIf="form.controls['email'].hasError('email')">
+			Введите ваш email
+		</span>
+	</div>
+	<input
+		type="tel"
+		placeholder="Телефон"
+		formControlName="phone"
+	/>
+	<div class="error">
+		<span *ngIf="form.controls['phone'].hasError('pattern')">
+			Введите номер телефона
+		</span>
+	</div>
+	<input
+		type="password"
+		placeholder="Пароль"
+		formControlName="password"
+	/>
+	<div class="error">
+		<span *ngIf="form.controls['phone'].hasError('pattern')">
+			Введите номер телефона
+		</span>
+	</div>
+	<input
+		type="password"
+		placeholder="Повторите пароль"
+		formControlName="password2"
+	/>
+	<div class="error">
+		<span *ngIf="form.value.password !== form.value.password2">
+			Пароли не совпадают
+		</span>
+	</div>
+	<button *ngIf="!(isLoading$ | async); else loader" type="submit" [disabled]="!form.valid">Войти</button>
+	<div class="choices">
+		<a (click)="openSignInModal()">Я уже зарегистировался(-ась)</a>
+	</div>
+	<button type="button" class="alternative">Вход для партнёров</button>
+</form>
+
+<ng-template #loader>
+	<div class="center">
+		<app-loader></app-loader>
+	</div>
+</ng-template>

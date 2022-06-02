@@ -19,7 +19,7 @@
 				<svg-icon src="assets/mapPoint.svg"></svg-icon>
 				Казань
 			</li>
-			<li (click)="openExampleDialog()">
+			<li (click)="openSignInModal()">
 				<svg-icon src="assets/login.svg"></svg-icon>
 				Войти
 			</li>
@@ -32,7 +32,7 @@
 
 <ng-template #authorized>
 	<div class="dynamic">
-		<li>
+		<li class="desktop">
 			<svg-icon src="assets/mapPoint.svg"></svg-icon>
 			Казань
 		</li>
@@ -42,7 +42,7 @@
 		</li>
 		<li>
 			<img [src]="cache$!.avatar_url ?? 'assets/defaultAvatar.png'" alt="Изображение профиля" />
-			{{cache$!.display_name}}
+			<span class="desktop">{{cache$!.display_name}}</span>
 		</li>
 		<li class="mobile">
 			<svg-icon src="assets/menu.svg"></svg-icon>

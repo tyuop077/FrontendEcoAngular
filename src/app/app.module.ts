@@ -31,6 +31,7 @@ import { ModalContainerComponent } from '@components/modals/modal-container/moda
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
 import { SessionService } from '@services/session.service';
 import { LoaderComponent } from '@components/ui/loader/loader.component';
+import { RegisterModalComponent } from '@components/modals/register-modal/register-modal.component';
 
 @NgModule({
     declarations: [
@@ -48,7 +49,8 @@ import { LoaderComponent } from '@components/ui/loader/loader.component';
 		ExampleDialogComponent,
 		ModalContainerComponent,
 		SignInModalComponent,
-		LoaderComponent
+		LoaderComponent,
+		RegisterModalComponent
     ],
 	imports: [
 		BrowserModule,

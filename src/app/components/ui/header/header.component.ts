@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 		{label: "О сервисе", path: "/about"}
 	]
 
-	openExampleDialog() {
+	openSignInModal() {
 		this.dialog.openDialog(SignInModalComponent);
 	}
 

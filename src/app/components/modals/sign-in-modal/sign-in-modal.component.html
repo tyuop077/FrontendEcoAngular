@@ -18,7 +18,7 @@
 	<button *ngIf="!(isLoading$ | async); else loader" type="submit" [disabled]="!form.valid">Войти</button>
 	<div class="choices">
 		<a href="#">Войти с помощью смс</a>
-		<a href="#">Регистрация</a>
+		<a (click)="openRegisterModal()">Регистрация</a>
 	</div>
 	<button type="button" class="alternative">Вход для партнёров</button>
 </form>

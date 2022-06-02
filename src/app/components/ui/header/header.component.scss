@@ -98,9 +98,13 @@ header {
 		}
 	}
 	.mobile {
-		display: none;
+		@media (min-width: 970px) {
+			display: none;
+		}
+	}
+	.desktop {
 		@media (max-width: 970px) {
-			display: block;
+			display: none;
 		}
 	}
 }
