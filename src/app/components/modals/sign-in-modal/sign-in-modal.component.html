@@ -8,16 +8,26 @@
 		placeholder="Телефон"
 		formControlName="phone"
 	/>
-	<span class="error">{{phoneError}}</span>
+	<span class="error" *ngIf="form.controls['phone'].hasError('pattern')">
+		Введите номер телефона
+	</span>
 	<input
 		type="password"
 		placeholder="Пароль"
 		formControlName="password"
 	/>
-	<span class="error">{{passwordError}}</span>
-	<button *ngIf="!(isLoading$ | async); else loader" type="submit" [disabled]="!form.valid">Войти</button>
+	<span class="error" *ngIf="form.controls['password'].hasError('minlength')">
+		Пароль должен быть не меньше 8 символов
+	</span>
+	<button
+		*ngIf="!(isLoading$ | async); else loader"
+		type="submit"
+		[disabled]="!form.valid"
+	>
+		Войти
+	</button>
 	<div class="choices">
-		<a href="#">Войти с помощью смс</a>
+		<a>Войти с помощью смс</a>
 		<a (click)="openRegisterModal()">Регистрация</a>
 	</div>
 	<button type="button" class="alternative">Вход для партнёров</button>

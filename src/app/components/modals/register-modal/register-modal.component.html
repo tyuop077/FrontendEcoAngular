@@ -8,42 +8,40 @@
 		placeholder="Email"
 		formControlName="email"
 	/>
-	<div class="error">
-		<span *ngIf="form.controls['email'].hasError('email')">
-			Введите ваш email
-		</span>
-	</div>
+	<span class="error" *ngIf="form.controls['email'].hasError('email')">
+		Введите ваш email
+	</span>
 	<input
 		type="tel"
 		placeholder="Телефон"
 		formControlName="phone"
 	/>
-	<div class="error">
-		<span *ngIf="form.controls['phone'].hasError('pattern')">
-			Введите номер телефона
-		</span>
-	</div>
+	<span class="error" *ngIf="form.controls['phone'].hasError('pattern')">
+		Введите номер телефона
+	</span>
 	<input
 		type="password"
 		placeholder="Пароль"
 		formControlName="password"
 	/>
-	<div class="error">
-		<span *ngIf="form.controls['phone'].hasError('pattern')">
-			Введите номер телефона
-		</span>
-	</div>
+	<span class="error" *ngIf="form.controls['password'].hasError('minlength')">
+		Пароль должен быть не меньше 8 символов
+	</span>
 	<input
 		type="password"
 		placeholder="Повторите пароль"
 		formControlName="password2"
 	/>
-	<div class="error">
-		<span *ngIf="form.value.password !== form.value.password2">
-			Пароли не совпадают
-		</span>
-	</div>
-	<button *ngIf="!(isLoading$ | async); else loader" type="submit" [disabled]="!form.valid">Войти</button>
+	<span class="error" *ngIf="form.controls['password2'].hasError('notequal')">
+		Пароли не совпадают
+	</span>
+	<button
+		*ngIf="!(isLoading$ | async); else loader"
+		type="submit"
+		[disabled]="!form.valid"
+	>
+		Зарегистрироваться
+	</button>
 	<div class="choices">
 		<a (click)="openSignInModal()">Я уже зарегистировался(-ась)</a>
 	</div>
