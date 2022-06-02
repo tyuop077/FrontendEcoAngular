@@ -21,7 +21,8 @@ export class SliderComponent implements OnInit {
 		spaceBetween: 50,
 		navigation: true,
 		pagination: { clickable: true },
-		scrollbar: { draggable: true }
+		scrollbar: { draggable: true },
+		simulateTouch: false
 	};
 
 	@ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
