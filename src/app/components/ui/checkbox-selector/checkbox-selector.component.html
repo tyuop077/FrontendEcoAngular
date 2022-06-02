@@ -1,0 +1,11 @@
+<div class="selector" *ngIf="selected$ | async as selected">
+	<div *ngFor="let item of choices$ | keyvalue">
+		<input
+			type="checkbox"
+			[id]="item.key"
+			[checked]="selected.includes(item.key)"
+			(change)="onChange(selected, item.key, !selected.includes(item.key))"
+		/>
+		<label [for]="item.key">{{item.value}}</label>
+	</div>
+</div>

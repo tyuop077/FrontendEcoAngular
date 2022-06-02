@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 export class MarketComponent implements OnInit {
 
 	sort$ = new BehaviorSubject<number>(0);
-	gender$ = new BehaviorSubject<"MAN" | "WOMAN" | "">("");
+	gender$ = new BehaviorSubject<string[]>([]);
 	categories$ = new BehaviorSubject<string[]>([]);
 	shops$ = new BehaviorSubject<string[]>([]);
 
@@ -21,6 +21,12 @@ export class MarketComponent implements OnInit {
 
 	setSort(index: number) {
 		this.sort$.next(index);
+	}
+
+	resetFilter() {
+		this.gender$.next([]);
+		this.categories$.next([]);
+		this.shops$.next([]);
 	}
 
 }

@@ -14,11 +14,11 @@ export class MarketItemsComponent implements OnInit {
 	constructor(private marketService: MarketService) { }
 
 	@Input("sort") sort$!: BehaviorSubject<number>;
-	@Input("gender") gender$!: BehaviorSubject<"MAN" | "WOMAN" | "">;
+	@Input("gender") gender$!: BehaviorSubject<string[]>;
 	@Input("categories") categories$!: BehaviorSubject<string[]>;
 	@Input("shops") shops$!: BehaviorSubject<string[]>;
 
-	private data!: Observable<[MarketItem[], number, "MAN" | "WOMAN" | "", string[], string[]]>;
+	private data!: Observable<[MarketItem[], number, string[], string[], string[]]>;
 
 	calculationSubscription$!: Subscription;
 
@@ -31,7 +31,7 @@ export class MarketItemsComponent implements OnInit {
 		this.calculationSubscription$ = this.data
 			.subscribe(([items, sort, gender, categories, shops]) => {
 				this.items$.next(items.filter(i => (
-					(gender === "" || gender === i.gender) &&
+					(gender.length === 0 || gender.includes(i.gender)) &&
 					(categories.length === 0 || categories.includes(i.type)) &&
 					(shops.length === 0 || shops.includes(i.brand))
 				)).sort((a, b) => (

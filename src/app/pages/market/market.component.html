@@ -9,9 +9,24 @@
 <div class="market">
 	<div class="filter">
 		<div class="choices">
-			TODO
+			<b>Пол</b>
+			<app-checkbox-selector
+				[choices]='{"MAN": "Мужской", "WOMAN": "Женский"}'
+				[selected]="gender$"
+			></app-checkbox-selector>
+			<b>Тип товара</b>
+			<app-checkbox-selector
+				[choices]='{"CLOTHES": "Одежда", "SHOES": "Обувь", "ACCESSORIZE": "Аксессуары",
+                            "FURNITURE": "Мебель", "DISHES": "Посуда"}'
+				[selected]="categories$"
+			></app-checkbox-selector>
+			<b>Брэнд</b>
+			<app-checkbox-selector
+				[choices]='{"H&M": "H&M", "P&B": "P&B", "Adidas": "Adidas", "NIKE": "Nike", "Reebok": "Reebok"}'
+				[selected]="shops$"
+			></app-checkbox-selector>
 		</div>
-		<button>Сбросить фильтры</button>
+		<button (click)="resetFilter()">Сбросить фильтры</button>
 	</div>
 	<app-market-items
 		[sort]="sort$"

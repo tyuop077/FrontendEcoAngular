@@ -22,6 +22,7 @@ import { RecyclingPointsComponent } from '@pages/recycling-points/recycling-poin
 import { MapComponent } from '@components/ui/map/map.component';
 import { MarketComponent } from '@pages/market/market.component';
 import { MarketItemsComponent } from '@components/ui/market-items/market-items.component';
+import { CheckboxSelectorComponent } from './components/ui/checkbox-selector/checkbox-selector.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { MarketItemsComponent } from '@components/ui/market-items/market-items.c
 		RecyclingPointsComponent,
 		MapComponent,
 		MarketComponent,
-		MarketItemsComponent
+		MarketItemsComponent,
+  CheckboxSelectorComponent
     ],
 	imports: [
 		BrowserModule,
