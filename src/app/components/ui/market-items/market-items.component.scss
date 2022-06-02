@@ -1,4 +1,4 @@
-.items {
+:host {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
@@ -45,46 +45,6 @@
 		}
 		span {
 			color: #000B268E;
-		}
-	}
-	.promo {
-		display: flex;
-		flex-direction: column;
-		padding: 24px;
-		border: 1px solid #3E50721E;
-		box-shadow: 0 12px 32px #7979791E, 0 4px 24px #152D671E;
-		border-radius: 16px;
-		width: 263px - 48px;
-		height: 371px - 48px;
-		.convert {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			height: 100%;
-			text-align: center;
-			svg {
-				position: relative;
-				top: 0.40em;
-				padding: 0 5px;
-			}
-		}
-		button {
-			font-size: 18px;
-			margin: 12px 0;
-			padding: 16px;
-			border-radius: 8px;
-			border: none;
-			background: #07C88E;
-			width: 100%;
-			color: white;
-			height: 56px;
-			cursor: pointer;
-			&:hover {
-				background: #07ab7a;
-			}
-			&:active {
-				background: #05815c;
-			}
 		}
 	}
 }

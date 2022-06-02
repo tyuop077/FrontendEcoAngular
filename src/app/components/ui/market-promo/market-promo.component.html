@@ -1,0 +1,18 @@
+<ng-container *ngIf="cache$; else guest">
+	<div class="convert">
+		<p>
+			<span>На вашем балансе</span>
+			<svg-icon src="assets/ecoCoin.svg"></svg-icon>
+			<b>{{cache$.balance}}</b>
+		</p>
+		<span>Вы можете обменять их на скидку {{cache$.balance}} руб.</span>
+	</div>
+	<button>Получить промокод</button>
+</ng-container>
+
+<ng-template #guest>
+	<div class="convert">
+		<p>Авторизуйтесь, чтобы получить персональную скидку</p>
+	</div>
+	<button (click)="openSignInModal()">Войти</button>
+</ng-template>

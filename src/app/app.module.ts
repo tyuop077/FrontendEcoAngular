@@ -32,6 +32,7 @@ import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-m
 import { SessionService } from '@services/session.service';
 import { LoaderComponent } from '@components/ui/loader/loader.component';
 import { RegisterModalComponent } from '@components/modals/register-modal/register-modal.component';
+import { MarketPromoComponent } from '@components/ui/market-promo/market-promo.component';
 
 @NgModule({
     declarations: [
@@ -50,7 +51,8 @@ import { RegisterModalComponent } from '@components/modals/register-modal/regist
 		ModalContainerComponent,
 		SignInModalComponent,
 		LoaderComponent,
-		RegisterModalComponent
+		RegisterModalComponent,
+		MarketPromoComponent
     ],
 	imports: [
 		BrowserModule,
