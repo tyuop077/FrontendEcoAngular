@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Optional, Inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk-experimental/dialog';
 
 class DialogData {
@@ -15,7 +15,7 @@ export class ProfilePromocodesQrComponent implements OnInit {
 
 	constructor(
 		private dialogRef: DialogRef<ProfilePromocodesQrComponent>,
-		@Optional() @Inject(DIALOG_DATA) public data: DialogData
+		@Inject(DIALOG_DATA) public data: DialogData
 	) { }
 
 	ngOnInit(): void {

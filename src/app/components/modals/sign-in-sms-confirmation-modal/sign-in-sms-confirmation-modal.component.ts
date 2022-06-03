@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Inject, Optional } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
@@ -19,7 +19,7 @@ export class SignInSmsConfirmationModalComponent implements OnInit {
 	constructor(
 		private dialogRef: DialogRef<SignInSmsConfirmationModalComponent>,
 		private dialog: DialogService,
-		@Optional() @Inject(DIALOG_DATA) public data: DialogData
+		@Inject(DIALOG_DATA) public data: DialogData
 	) { }
 
 	ngOnInit(): void {
