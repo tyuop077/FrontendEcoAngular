@@ -4,6 +4,7 @@ import { DialogService } from '@services/dialog.service';
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignInSmsConfirmationModalComponent } from '@components/modals/sign-in-sms-confirmation-modal/sign-in-sms-confirmation-modal.component';
+import { PartnerSignInModalComponent } from '@components/modals/partner-sign-in-modal/partner-sign-in-modal.component';
 
 @Component({
 	selector: 'app-sign-in-sms-modal',
@@ -46,6 +47,11 @@ export class SignInSmsModalComponent implements OnInit {
 				phone: this.form.value.phone
 			}
 		})
+	}
+
+	openPartnerSignInModal() {
+		this.close();
+		this.dialog.openDialog(PartnerSignInModalComponent);
 	}
 
 }

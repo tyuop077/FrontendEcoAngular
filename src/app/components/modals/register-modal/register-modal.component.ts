@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 import { DialogService } from '@services/dialog.service';
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
 import { EqualsValidator } from '@utils/equals.validator';
+import { PartnerSignInModalComponent } from '@components/modals/partner-sign-in-modal/partner-sign-in-modal.component';
 
 @Component({
   selector: 'app-register-modal',
@@ -52,6 +53,11 @@ export class RegisterModalComponent implements OnInit {
 	openSignInModal() {
 		this.close();
 		this.dialog.openDialog(SignInModalComponent);
+	}
+
+	openPartnerSignInModal() {
+		this.close();
+		this.dialog.openDialog(PartnerSignInModalComponent);
 	}
 
 	onSubmit(): void {

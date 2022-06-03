@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Inject, Optional } from '@a
 import { DIALOG_DATA, DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
+import { PartnerSignInModalComponent } from '@components/modals/partner-sign-in-modal/partner-sign-in-modal.component';
 
 class DialogData {
 	phone!: string;
@@ -31,6 +32,11 @@ export class SignInSmsConfirmationModalComponent implements OnInit {
 	openSignInModal() {
 		this.close();
 		this.dialog.openDialog(SignInModalComponent);
+	}
+
+	openPartnerSignInModal() {
+		this.close();
+		this.dialog.openDialog(PartnerSignInModalComponent);
 	}
 
 }

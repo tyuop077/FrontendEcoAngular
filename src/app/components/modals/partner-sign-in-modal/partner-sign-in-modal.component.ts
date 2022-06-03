@@ -1,29 +1,30 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogRef } from '@angular/cdk-experimental/dialog';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { APIService } from '@services/api.service';
-import { BehaviorSubject } from 'rxjs';
 import { DialogService } from '@services/dialog.service';
+import { BehaviorSubject } from 'rxjs';
 import { RegisterModalComponent } from '@components/modals/register-modal/register-modal.component';
 import { SignInSmsModalComponent } from '@components/modals/sign-in-sms-modal/sign-in-sms-modal.component';
-import { PartnerSignInModalComponent } from '@components/modals/partner-sign-in-modal/partner-sign-in-modal.component';
 
 @Component({
-	selector: 'app-sign-in-modal',
-	templateUrl: './sign-in-modal.component.html',
-	styleUrls: ['./sign-in-modal.component.scss', '../global.scss'],
+	selector: 'app-partner-sign-in-modal',
+	templateUrl: './partner-sign-in-modal.component.html',
+	styleUrls: ['./partner-sign-in-modal.component.scss', '../global.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SignInModalComponent implements OnInit {
+export class PartnerSignInModalComponent implements OnInit {
 
 	constructor(
-		private dialogRef: DialogRef<SignInModalComponent>,
+		private dialogRef: DialogRef<PartnerSignInModalComponent>,
 		private fb: FormBuilder,
 		private API: APIService,
 		private dialog: DialogService
 	) {
 		this.form = this.fb.group({
+			email: new FormControl("", [
+				Validators.required, Validators.email
+			]),
 			phone: new FormControl("", [
 				Validators.required, Validators.pattern(/\+?\d+/)
 			]),
@@ -51,11 +52,6 @@ export class SignInModalComponent implements OnInit {
 	openSignInSMSModal() {
 		this.close();
 		this.dialog.openDialog(SignInSmsModalComponent);
-	}
-
-	openPartnerSignInModal() {
-		this.close();
-		this.dialog.openDialog(PartnerSignInModalComponent);
 	}
 
 	onSubmit(): void {

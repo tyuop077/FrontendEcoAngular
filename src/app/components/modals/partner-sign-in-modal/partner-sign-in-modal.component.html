@@ -4,6 +4,14 @@
 </div>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 	<input
+		type="email"
+		placeholder="Email"
+		formControlName="email"
+	/>
+	<span class="error" *ngIf="form.controls['email'].hasError('email')">
+		Введите email
+	</span>
+	<input
 		type="tel"
 		placeholder="Телефон"
 		formControlName="phone"
@@ -30,13 +38,6 @@
 		<a (click)="openSignInSMSModal()">Войти с помощью смс</a>
 		<a (click)="openRegisterModal()">Регистрация</a>
 	</div>
-	<button
-		type="button"
-		class="alternative"
-		(click)="openPartnerSignInModal()"
-	>
-		Вход для партнёров
-	</button>
 </form>
 
 <ng-template #loader>
