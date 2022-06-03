@@ -38,6 +38,7 @@ import { MarketPurchaseModalComponent } from '@components/modals/market-purchase
 import { MultiselectComponent } from '@components/ui/multiselect/multiselect.component';
 import { ProfileComponent } from '@pages/profile/profile.component';
 import { ProfileCardComponent } from '@components/ui/profile-card/profile-card.component';
+import { ProfilePromocodesComponent } from '@components/ui/profile-promocodes/profile-promocodes.component';
 
 @NgModule({
     declarations: [
@@ -61,7 +62,8 @@ import { ProfileCardComponent } from '@components/ui/profile-card/profile-card.c
 		MarketPurchaseModalComponent,
 		MultiselectComponent,
 		ProfileComponent,
-		ProfileCardComponent
+		ProfileCardComponent,
+		ProfilePromocodesComponent
     ],
 	imports: [
 		BrowserModule,
