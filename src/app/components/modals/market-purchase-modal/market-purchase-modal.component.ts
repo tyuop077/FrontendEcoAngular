@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogRef } from '@angular/cdk-experimental/dialog';
+import { Random } from '@utils/random';
 
 @Component({
 	selector: 'app-market-purchase-modal',
@@ -18,14 +19,6 @@ export class MarketPurchaseModalComponent implements OnInit {
 		this.dialogRef.close(true);
 	}
 
-	readonly code = MarketPurchaseModalComponent.randomString(8).toUpperCase();
-
-	static randomString(length: number) {
-		let str = "";
-		while (str.length < length) {
-			str += (Math.random() * 36 | 0).toString(36)
-		}
-		return str
-	}
+	readonly code = Random.string(8).toUpperCase();
 
 }
