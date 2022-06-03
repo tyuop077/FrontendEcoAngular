@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Random } from '@utils/random';
 import { DialogService } from '@services/dialog.service';
 import { MarketPurchaseModalComponent } from '@components/modals/market-purchase-modal/market-purchase-modal.component';
+import { MarketPromocodesService } from '@services/market-promocodes.service';
 
 @Component({
 	selector: 'app-profile-promocodes',
@@ -11,9 +11,9 @@ import { MarketPurchaseModalComponent } from '@components/modals/market-purchase
 })
 export class ProfilePromocodesComponent implements OnInit {
 
-	constructor(private dialog: DialogService) { }
+	constructor(private dialog: DialogService, private promocodes: MarketPromocodesService) { }
 
-	readonly code = Random.string(60);
+	items$ = this.promocodes.items$
 
 	ngOnInit(): void {
 	}
