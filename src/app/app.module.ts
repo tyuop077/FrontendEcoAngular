@@ -25,7 +25,6 @@ import { MarketItemsComponent } from '@components/ui/market-items/market-items.c
 import { CheckboxSelectorComponent } from '@components/ui/checkbox-selector/checkbox-selector.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
-import { ExampleDialogComponent } from '@components/modals/example-dialog/example-dialog.component';
 import { DialogModule } from '@angular/cdk-experimental/dialog';
 import { ModalContainerComponent } from '@components/modals/modal-container/modal-container.component';
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
@@ -58,7 +57,6 @@ import { ProfilePromocodesQrComponent } from '@components/modals/profile-promoco
 		MarketComponent,
 		MarketItemsComponent,
 		CheckboxSelectorComponent,
-		ExampleDialogComponent,
 		ModalContainerComponent,
 		SignInModalComponent,
 		LoaderComponent,
