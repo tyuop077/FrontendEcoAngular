@@ -1,0 +1,52 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	padding-top: 24px;
+	gap: 16px;
+}
+
+.item {
+	border-radius: 20px;
+	padding: 32px;
+	border: 1px solid #3E507228;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.label {
+	gap: 4px;
+	span {
+		color: #000B2666;
+	}
+	p {
+		margin: 0;
+	}
+}
+
+.tags {
+	p {
+		display: inline-block;
+	}
+	p + p::before {
+		content: "";
+		display: inline-block;
+		margin: 3px 15px;
+		background: #3E50723D;
+		width: 6px;
+		height: 6px;
+		border-radius: 6px;
+	}
+
+}
+
+.cost {
+	position: relative;
+	float: right;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}

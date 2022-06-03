@@ -39,6 +39,7 @@ import { MultiselectComponent } from '@components/ui/multiselect/multiselect.com
 import { ProfileComponent } from '@pages/profile/profile.component';
 import { ProfileCardComponent } from '@components/ui/profile-card/profile-card.component';
 import { ProfilePromocodesComponent } from '@components/ui/profile-promocodes/profile-promocodes.component';
+import { ProfileHistoryComponent } from '@components/ui/profile-history/profile-history.component';
 
 @NgModule({
     declarations: [
@@ -63,7 +64,8 @@ import { ProfilePromocodesComponent } from '@components/ui/profile-promocodes/pr
 		MultiselectComponent,
 		ProfileComponent,
 		ProfileCardComponent,
-		ProfilePromocodesComponent
+		ProfilePromocodesComponent,
+		ProfileHistoryComponent
     ],
 	imports: [
 		BrowserModule,
