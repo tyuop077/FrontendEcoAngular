@@ -1,48 +1,24 @@
-<div class="item">
+<div class="item" *ngFor="let item of items$ | async">
 	<div class="cost">
 		<svg-icon src="assets/ecoCoin.svg"></svg-icon>
-		<b>1000</b>
+		<b>{{item.payout}}</b>
 	</div>
 	<div class="wrapper">
 		<div class="label">
 			<span>Адрес</span>
-			<p>Казань, Кремлёвская, 88</p>
+			<p>{{item.address}}</p>
 		</div>
 		<div class="label">
 			<span>Материал</span>
 			<div class="tags">
-				<p>Пластик: 1 кг</p>
-				<p>Стекло: 2 кг</p>
-				<p>Бумага: 25 кг</p>
+				<p *ngFor="let material of item.materials">
+					{{material}}
+				</p>
 			</div>
 		</div>
 		<div class="label">
 			<span>Дата</span>
-			<p>25.09.2021</p>
-		</div>
-	</div>
-</div>
-<div class="item">
-	<div class="cost">
-		<svg-icon src="assets/ecoCoin.svg"></svg-icon>
-		<b>900</b>
-	</div>
-	<div class="wrapper">
-		<div class="label">
-			<span>Адрес</span>
-			<p>Казань, проспект Победы, 141</p>
-		</div>
-		<div class="label">
-			<span>Материал</span>
-			<div class="tags">
-				<p>Пластик: 1 кг</p>
-				<p>Стекло: 3 кг</p>
-				<p>Бумага: 5 кг</p>
-			</div>
-		</div>
-		<div class="label">
-			<span>Дата</span>
-			<p>25.09.2021</p>
+			<p>{{item.date}}</p>
 		</div>
 	</div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ProfileHistoryService } from '@services/profile-history.service';
 
 @Component({
 	selector: 'app-profile-history',
@@ -8,7 +9,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class ProfileHistoryComponent implements OnInit {
 
-	constructor() { }
+	constructor(private history: ProfileHistoryService) { }
+
+	items$ = this.history.items$
 
 	ngOnInit(): void {
 	}
