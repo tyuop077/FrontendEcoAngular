@@ -43,6 +43,7 @@ import { ProfileHistoryComponent } from '@components/ui/profile-history/profile-
 import { SignInSmsModalComponent } from '@components/modals/sign-in-sms-modal/sign-in-sms-modal.component';
 import { SignInSmsConfirmationModalComponent } from '@components/modals/sign-in-sms-confirmation-modal/sign-in-sms-confirmation-modal.component';
 import { PartnerSignInModalComponent } from '@components/modals/partner-sign-in-modal/partner-sign-in-modal.component';
+import { ProfilePromocodesQrComponent } from '@components/modals/profile-promocodes-qr/profile-promocodes-qr.component';
 
 @NgModule({
     declarations: [
@@ -71,7 +72,8 @@ import { PartnerSignInModalComponent } from '@components/modals/partner-sign-in-
 		ProfileHistoryComponent,
 		SignInSmsModalComponent,
 		SignInSmsConfirmationModalComponent,
-		PartnerSignInModalComponent
+		PartnerSignInModalComponent,
+		ProfilePromocodesQrComponent
     ],
 	imports: [
 		BrowserModule,

@@ -1,5 +1,5 @@
 <div class="item" *ngFor="let item of items$ | async">
-	<button *ngIf="item.valid" (click)="showQRCodeModal()">Показать qr-код</button>
+	<button *ngIf="item.valid" (click)="showQRCodeModal(item.link)">Показать qr-код</button>
 	<div class="value">{{item.discount}} ₽</div>
 	<svg-icon
 		src="assets/coupon.svg"

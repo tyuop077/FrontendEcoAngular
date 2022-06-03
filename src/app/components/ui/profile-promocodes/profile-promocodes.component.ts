@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogService } from '@services/dialog.service';
-import { MarketPurchaseModalComponent } from '@components/modals/market-purchase-modal/market-purchase-modal.component';
 import { ProfilePromocodesService } from '@services/profile-promocodes.service';
+import { ProfilePromocodesQrComponent } from '@components/modals/profile-promocodes-qr/profile-promocodes-qr.component';
 
 @Component({
 	selector: 'app-profile-promocodes',
@@ -18,8 +18,10 @@ export class ProfilePromocodesComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	showQRCodeModal() {
-		this.dialog.openDialog(MarketPurchaseModalComponent);
+	showQRCodeModal(link: string) {
+		this.dialog.openDialog(ProfilePromocodesQrComponent, {
+			data: { link }
+		});
 	}
 
 }
