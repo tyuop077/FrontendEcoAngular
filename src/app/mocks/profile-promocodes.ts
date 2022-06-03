@@ -1,6 +1,6 @@
-import { MarketPromocode } from '@services/market-promocodes.service';
+import { ProfilePromocode } from '@services/profile-promocodes.service';
 
-export const MarketPromocodes: MarketPromocode[] = [
+export const ProfilePromocodes: ProfilePromocode[] = [
 	{
 		expired: false,
 		discount: 1000,

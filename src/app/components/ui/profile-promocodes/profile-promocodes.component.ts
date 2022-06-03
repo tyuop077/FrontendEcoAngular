@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogService } from '@services/dialog.service';
 import { MarketPurchaseModalComponent } from '@components/modals/market-purchase-modal/market-purchase-modal.component';
-import { MarketPromocodesService } from '@services/market-promocodes.service';
+import { ProfilePromocodesService } from '@services/profile-promocodes.service';
 
 @Component({
 	selector: 'app-profile-promocodes',
@@ -11,7 +11,7 @@ import { MarketPromocodesService } from '@services/market-promocodes.service';
 })
 export class ProfilePromocodesComponent implements OnInit {
 
-	constructor(private dialog: DialogService, private promocodes: MarketPromocodesService) { }
+	constructor(private dialog: DialogService, private promocodes: ProfilePromocodesService) { }
 
 	items$ = this.promocodes.items$
 
