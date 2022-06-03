@@ -17,11 +17,11 @@
 		<ul class="dynamic" *ngIf="!cache$; else authorized">
 			<li>
 				<svg-icon src="assets/mapPoint.svg"></svg-icon>
-				Казань
+				<span class="desktop">Казань</span>
 			</li>
 			<li (click)="openSignInModal()">
 				<svg-icon src="assets/login.svg"></svg-icon>
-				Войти
+				<span class="desktop">Войти</span>
 			</li>
 			<li class="mobile">
 				<svg-icon src="assets/menu.svg"></svg-icon>
@@ -34,7 +34,7 @@
 	<div class="dynamic">
 		<li class="desktop">
 			<svg-icon src="assets/mapPoint.svg"></svg-icon>
-			Казань
+			<span class="desktop">Казань</span>
 		</li>
 		<li>
 			<svg-icon src="assets/ecoCoin.svg"></svg-icon>
