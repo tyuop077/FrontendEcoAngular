@@ -2,3 +2,24 @@
 	<div></div>
 	<svg-icon src="assets/close.svg" (click)="close()"></svg-icon>
 </div>
+<div class="card">
+	<img [src]="cache$!.avatar_url ?? 'assets/defaultAvatarFull.png'" alt="Изображение профиля" />
+	<div class="info">
+		<b>{{cache$!.display_name}}</b>
+		<div class="balance">
+			<svg-icon src="assets/ecoCoin.svg"></svg-icon>
+			<b>{{cache$!.balance}}</b>
+		</div>
+	</div>
+</div>
+<div class="nav">
+	<a
+		*ngFor="let location of data.nav"
+		[routerLink]="location.path"
+		routerLinkActive="current"
+		[routerLinkActiveOptions]="{exact: true}"
+		(click)="close()"
+	>
+		{{location.label}}
+	</a>
+</div>
