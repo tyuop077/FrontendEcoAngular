@@ -4,8 +4,7 @@ import {
 	HttpEvent,
 	HttpHandler,
 	HttpInterceptor,
-	HttpRequest,
-	HttpResponse
+	HttpRequest
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { environment } from '@environments/environment';
@@ -30,10 +29,7 @@ export class UrlInterceptorService implements HttpInterceptor {
 			}),
 		).pipe(
 			tap(
-				(event) => {
-					if (event instanceof HttpResponse)
-						console.log(`Server response ${event.url}`)
-				},
+				null,
 				(err) => {
 					if (err instanceof HttpErrorResponse) {
 						if (err.status == 401)

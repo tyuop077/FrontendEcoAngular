@@ -40,7 +40,8 @@ export class HeaderComponent implements OnInit {
 			panelClass: "borderless",
 			data: {
 				nav: this.locations$
-			}
+			},
+			autoFocus: "dialog"
 		});
 	}
 
