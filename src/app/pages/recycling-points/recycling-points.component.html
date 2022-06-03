@@ -2,26 +2,30 @@
 <div class="bar">
 	<input type="text" placeholder="Поиск"/>
 	<svg-icon class="search" src="assets/search.svg"></svg-icon>
-	<select name="shops">
-		<option value="info" disabled selected>Выбрано 0 магазинов</option>
-		<option value="all">Выбрать все</option>
-		<option value="0">H&M</option>
-		<option value="1">P&B</option>
-		<option value="2">Adidas</option>
-		<option value="3">Nike</option>
-		<option value="4">Reebok</option>
-	</select>
-	<select name="materials">
-		<option value="info" disabled selected>Материалы</option>
-		<option value="all">Выбрать все</option>
-		<option value="0">Пластик</option>
-		<option value="1">Обувь</option>
-		<option value="2">Старая одежда</option>
-		<option value="3">Стекло</option>
-		<option value="4">Бумага</option>
-		<option value="5">Металл</option>
-		<option value="6">Батарейка</option>
-	</select>
+	<app-multiselect
+		[choices]='{
+			"H&M": "H&M",
+			"P&B": "P&B",
+			"Adidas": "Adidas",
+			"Nike": "Nike",
+			"Reebok": "Reebok"
+		}'
+		value="Выбрано % магазинов"
+		[selected]="selectedShops$"
+	></app-multiselect>
+	<app-multiselect
+		[choices]='{
+			plastic: "Пластик",
+			shoes: "Обувь",
+			oldClothes: "Старая одежда",
+			glass: "Стекло",
+			paper: "Бумага",
+			metal: "Металл",
+			battery: "Батарейка"
+		}'
+		value="Материалы (%)"
+		[selected]="selectedMaterials$"
+	></app-multiselect>
 </div>
 <div class="container">
 	<div class="collections" *ngIf="selected === null; else pointDescription">

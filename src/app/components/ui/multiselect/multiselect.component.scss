@@ -1,0 +1,25 @@
+button {
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 20px;
+	cursor: pointer;
+	&__backdrop {
+		background:transparent;
+	}
+	border-radius: 8px;
+	border: none;
+	width: 280px;
+	height: 100%;
+	background-color: white;
+	svg {
+		float: right;
+		padding-top: 2px;
+	}
+}
+
+.dropdown {
+	padding: 12px;
+	background-color: white;
+	width: 100%;
+	border-radius: 12px;
+}

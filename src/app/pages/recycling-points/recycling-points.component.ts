@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CollectionPointsService } from '@services/collection-points.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-recycling-points',
@@ -13,6 +14,9 @@ export class RecyclingPointsComponent implements OnInit {
 
 	points$ = this.collectionPointsService.points$;
 	selected: number | null = null;
+
+	selectedShops$ = new BehaviorSubject<string[]>([]);
+	selectedMaterials$ = new BehaviorSubject<string[]>([]);
 
 	ngOnInit(): void {
 	}

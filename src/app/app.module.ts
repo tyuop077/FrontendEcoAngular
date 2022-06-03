@@ -35,6 +35,7 @@ import { RegisterModalComponent } from '@components/modals/register-modal/regist
 import { MarketPromoComponent } from '@components/ui/market-promo/market-promo.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { MarketPurchaseModalComponent } from '@components/modals/market-purchase-modal/market-purchase-modal.component';
+import { MultiselectComponent } from '@components/ui/multiselect/multiselect.component';
 
 @NgModule({
     declarations: [
@@ -55,7 +56,8 @@ import { MarketPurchaseModalComponent } from '@components/modals/market-purchase
 		LoaderComponent,
 		RegisterModalComponent,
 		MarketPromoComponent,
-		MarketPurchaseModalComponent
+		MarketPurchaseModalComponent,
+		MultiselectComponent
     ],
 	imports: [
 		BrowserModule,
