@@ -49,10 +49,10 @@ export class SignInModalComponent implements OnInit {
 	onSubmit(): void {
 		this.isLoading$.next(true);
 		this.API.login(this.form.value.phone, this.form.value.password).subscribe(
-			next => {
+			() => {
 				this.isLoading$.next(false);
 			},
-			error => {
+			() => {
 				this.isLoading$.next(false);
 			}
 		)
