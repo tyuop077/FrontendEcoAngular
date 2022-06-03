@@ -1,4 +1,36 @@
-:host {
+.container {
 	display: flex;
 	gap: 48px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.nav {
+	display: flex;
+	box-shadow: 0 0.5px 0 #0000001E;
+	gap: 24px;
+	font-size: 20px;
+	line-height: 26px;
+	height: 40px;
+	align-items: center;
+	p {
+		cursor: pointer;
+		user-select: none;
+	}
+}
+
+.selected {
+	font-weight: 700;
+	text-decoration: underline;
+	text-decoration-color: #0a9f72;
+	text-decoration-thickness: 3px;
+	text-underline-offset: 9px;
+}
+
+.codes {
+	height: 100%;
 }

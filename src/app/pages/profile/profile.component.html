@@ -1,2 +1,18 @@
-<app-profile-card></app-profile-card>
-<p>test</p>
+<h1>Личный кабинет</h1>
+<div class="container">
+	<app-profile-card></app-profile-card>
+	<div class="wrapper">
+		<div class="nav">
+			<p
+				*ngFor="let label of ['Промокоды', 'История']; index as i"
+				[class.selected]="tab === i"
+				(click)="setTab(i)"
+			>
+				{{label}}
+			</p>
+		</div>
+		<div class="codes">
+
+		</div>
+	</div>
+</div>

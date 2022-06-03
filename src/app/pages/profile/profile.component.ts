@@ -10,7 +10,13 @@ export class ProfileComponent implements OnInit {
 
 	constructor() { }
 
+	tab: number = 0;
+
 	ngOnInit(): void {
+	}
+
+	setTab(index: number) {
+		this.tab = index;
 	}
 
 }

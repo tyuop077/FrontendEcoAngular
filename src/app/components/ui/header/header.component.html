@@ -40,7 +40,7 @@
 			<svg-icon src="assets/ecoCoin.svg"></svg-icon>
 			<b>{{cache$!.balance}}</b>
 		</li>
-		<li>
+		<li routerLink="/profile">
 			<img [src]="cache$!.avatar_url ?? 'assets/defaultAvatar.png'" alt="Изображение профиля" />
 			<span class="desktop">{{cache$!.display_name}}</span>
 		</li>
