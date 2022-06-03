@@ -28,6 +28,7 @@
 		color: white;
 		width: 180px;
 		text-align: center;
+		z-index: 1;
 	}
 }
 
@@ -77,4 +78,8 @@ button {
 	&:active {
 		background: #3E507233;
 	}
+}
+
+.invalid {
+	-webkit-filter: grayscale(1);
 }

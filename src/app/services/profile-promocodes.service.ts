@@ -17,7 +17,7 @@ export class ProfilePromocodesService {
 }
 
 export interface ProfilePromocode {
-	expired: boolean,
+	valid: boolean,
 	discount: number,
 	date: string,
 	link: string
