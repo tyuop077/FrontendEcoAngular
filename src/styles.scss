@@ -30,3 +30,9 @@ html, #root, body, root, .App {
 		background-color: #ffffff;
 	}
 }
+
+.borderless {
+	app-modal-container {
+		border-radius: 0;
+	}
+}

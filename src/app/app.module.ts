@@ -43,6 +43,7 @@ import { SignInSmsModalComponent } from '@components/modals/sign-in-sms-modal/si
 import { SignInSmsConfirmationModalComponent } from '@components/modals/sign-in-sms-confirmation-modal/sign-in-sms-confirmation-modal.component';
 import { PartnerSignInModalComponent } from '@components/modals/partner-sign-in-modal/partner-sign-in-modal.component';
 import { ProfilePromocodesQrComponent } from '@components/modals/profile-promocodes-qr/profile-promocodes-qr.component';
+import { MobileNavComponent } from '@components/modals/mobile-nav/mobile-nav.component';
 
 @NgModule({
     declarations: [
@@ -71,7 +72,8 @@ import { ProfilePromocodesQrComponent } from '@components/modals/profile-promoco
 		SignInSmsModalComponent,
 		SignInSmsConfirmationModalComponent,
 		PartnerSignInModalComponent,
-		ProfilePromocodesQrComponent
+		ProfilePromocodesQrComponent,
+		MobileNavComponent
     ],
 	imports: [
 		BrowserModule,

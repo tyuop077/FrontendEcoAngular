@@ -24,6 +24,15 @@
 	}
 }
 
+.mobileTitleBar {
+	@extend .titleBar;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 40px);
+	margin: 20px;
+}
+
 .choices {
 	display: flex;
 	justify-content: space-between;

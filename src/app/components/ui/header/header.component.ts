@@ -3,6 +3,7 @@ import { LocalStorage } from '@utils/local-storage';
 import { DialogService } from '@services/dialog.service';
 import { SignInModalComponent } from '@components/modals/sign-in-modal/sign-in-modal.component';
 import { UserSessionCache } from '@services/session.service';
+import { MobileNavComponent } from '@components/modals/mobile-nav/mobile-nav.component';
 
 @Component({
 	selector: 'app-header',
@@ -28,6 +29,16 @@ export class HeaderComponent implements OnInit {
 
 	openSignInModal() {
 		this.dialog.openDialog(SignInModalComponent);
+	}
+
+	openMobileNav() {
+		this.dialog.openDialog(MobileNavComponent, {
+			maxWidth: "100vw",
+			maxHeight: "100vh",
+			width: "100%",
+			height: "100%",
+			panelClass: "borderless"
+		});
 	}
 
 }

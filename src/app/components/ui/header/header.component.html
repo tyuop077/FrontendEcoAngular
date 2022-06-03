@@ -14,16 +14,18 @@
 				</a>
 			</li>
 		</ul>
-		<ul class="dynamic" *ngIf="!cache$; else authorized">
+		<ul class="dynamic">
 			<li>
 				<svg-icon src="assets/mapPoint.svg"></svg-icon>
 				<span class="desktop">Казань</span>
 			</li>
-			<li (click)="openSignInModal()">
-				<svg-icon src="assets/login.svg"></svg-icon>
-				<span class="desktop">Войти</span>
-			</li>
-			<li class="mobile">
+			<ng-container *ngIf="!cache$; else authorized">
+				<li (click)="openSignInModal()">
+					<svg-icon src="assets/login.svg"></svg-icon>
+					<span class="desktop">Войти</span>
+				</li>
+			</ng-container>
+			<li (click)="openMobileNav()" class="mobile">
 				<svg-icon src="assets/menu.svg"></svg-icon>
 			</li>
 		</ul>
@@ -31,21 +33,12 @@
 </header>
 
 <ng-template #authorized>
-	<div class="dynamic">
-		<li class="desktop">
-			<svg-icon src="assets/mapPoint.svg"></svg-icon>
-			<span class="desktop">Казань</span>
-		</li>
-		<li>
-			<svg-icon src="assets/ecoCoin.svg"></svg-icon>
-			<b>{{cache$!.balance}}</b>
-		</li>
-		<li routerLink="/profile">
-			<img [src]="cache$!.avatar_url ?? 'assets/defaultAvatar.png'" alt="Изображение профиля" />
-			<span class="desktop">{{cache$!.display_name}}</span>
-		</li>
-		<li class="mobile">
-			<svg-icon src="assets/menu.svg"></svg-icon>
-		</li>
-	</div>
+	<li>
+		<svg-icon src="assets/ecoCoin.svg"></svg-icon>
+		<b>{{cache$!.balance}}</b>
+	</li>
+	<li routerLink="/profile">
+		<img [src]="cache$!.avatar_url ?? 'assets/defaultAvatar.png'" alt="Изображение профиля" />
+		<span class="desktop">{{cache$!.display_name}}</span>
+	</li>
 </ng-template>
