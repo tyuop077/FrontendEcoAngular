@@ -61,3 +61,20 @@
 		}
 	}
 }
+
+button {
+	position: relative;
+	top: 0;
+	float: right;
+	padding: 10px 20px;
+	background: #3E507214;
+	border-radius: 8px;
+	cursor: pointer;
+	border: none;
+	&:hover {
+		background: #3E50721E;
+	}
+	&:active {
+		background: #3E507233;
+	}
+}
