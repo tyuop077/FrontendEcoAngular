@@ -1,0 +1,16 @@
+<div class="titleBar">
+	<h1>Вход или регистрация</h1>
+	<svg-icon src="assets/close.svg" (click)="close()"></svg-icon>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+	<input
+		type="tel"
+		placeholder="Телефон"
+		formControlName="phone"
+	/>
+	<button type="submit">Получить код</button>
+</form>
+<div class="choices">
+	<a (click)="openSignInModal()">Я уже зарегистировался(-ась)</a>
+</div>
+<button type="button" class="alternative">Вход для партнёров</button>

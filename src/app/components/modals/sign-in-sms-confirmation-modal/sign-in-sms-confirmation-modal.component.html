@@ -1,0 +1,13 @@
+<div class="titleBar">
+	<h1>Ввести код</h1>
+	<svg-icon src="assets/close.svg" (click)="close()"></svg-icon>
+</div>
+<form>
+	<p>Введите код отправленный вам на телефон <span>{{data.phone}}</span></p>
+	<input placeholder="Код" />
+	<button type="submit">Отправить</button>
+</form>
+<div class="choices">
+	<a (click)="openSignInModal()">Не получил(-а) код</a>
+</div>
+<button type="button" class="alternative">Вход для партнёров</button>

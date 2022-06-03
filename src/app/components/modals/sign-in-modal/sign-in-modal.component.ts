@@ -6,6 +6,7 @@ import { APIService } from '@services/api.service';
 import { BehaviorSubject } from 'rxjs';
 import { DialogService } from '@services/dialog.service';
 import { RegisterModalComponent } from '@components/modals/register-modal/register-modal.component';
+import { SignInSmsModalComponent } from '@components/modals/sign-in-sms-modal/sign-in-sms-modal.component';
 
 @Component({
 	selector: 'app-sign-in-modal',
@@ -44,6 +45,11 @@ export class SignInModalComponent implements OnInit {
 	openRegisterModal() {
 		this.close();
 		this.dialog.openDialog(RegisterModalComponent);
+	}
+
+	openSignInSMSModal() {
+		this.close();
+		this.dialog.openDialog(SignInSmsModalComponent);
 	}
 
 	onSubmit(): void {
