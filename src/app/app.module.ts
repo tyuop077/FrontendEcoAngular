@@ -33,6 +33,8 @@ import { SessionService } from '@services/session.service';
 import { LoaderComponent } from '@components/ui/loader/loader.component';
 import { RegisterModalComponent } from '@components/modals/register-modal/register-modal.component';
 import { MarketPromoComponent } from '@components/ui/market-promo/market-promo.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { MarketPurchaseModalComponent } from '@components/modals/market-purchase-modal/market-purchase-modal.component';
 
 @NgModule({
     declarations: [
@@ -52,7 +54,8 @@ import { MarketPromoComponent } from '@components/ui/market-promo/market-promo.c
 		SignInModalComponent,
 		LoaderComponent,
 		RegisterModalComponent,
-		MarketPromoComponent
+		MarketPromoComponent,
+		MarketPurchaseModalComponent
     ],
 	imports: [
 		BrowserModule,
@@ -72,7 +75,8 @@ import { MarketPromoComponent } from '@components/ui/market-promo/market-promo.c
 		AngularSvgIconModule.forRoot(),
 		DialogModule,
 		OverlayModule,
-		PortalModule
+		PortalModule,
+		QRCodeModule
 	],
 	providers: [
 		{

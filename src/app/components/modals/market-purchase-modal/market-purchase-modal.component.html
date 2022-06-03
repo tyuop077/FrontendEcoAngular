@@ -1,0 +1,10 @@
+<div class="titleBar">
+	<h1>QR-код на покупку создан</h1>
+</div>
+<span>При оплате покажите его сотруднику на кассе</span>
+<div class="center">
+	<qrcode [qrdata]="code" [width]="384" [errorCorrectionLevel]="'M'"></qrcode>
+</div>
+<h1>{{code}}</h1>
+<span>Если не получается отсканировать QR-код, введите код<br />вручную или продиктуйте сотруднику на кассе</span>
+<button (click)="close()">Закрыть</button>

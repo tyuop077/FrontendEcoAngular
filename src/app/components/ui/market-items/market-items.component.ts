@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 import { MarketItem, MarketService } from '@services/market.service';
 import { BehaviorSubject, combineLatest, Observable, Subscription } from 'rxjs';
 import { MarketPreviewGenerator } from '@utils/market-preview-generator';
+import { DialogService } from '@services/dialog.service';
+import { MarketPurchaseModalComponent } from '@components/modals/market-purchase-modal/market-purchase-modal.component';
 
 @Component({
 	selector: 'app-market-items',
@@ -11,7 +13,7 @@ import { MarketPreviewGenerator } from '@utils/market-preview-generator';
 })
 export class MarketItemsComponent implements OnInit {
 
-	constructor(private marketService: MarketService) { }
+	constructor(private marketService: MarketService, private dialog: DialogService) { }
 
 	@Input("sort") sort$!: BehaviorSubject<number>;
 	@Input("gender") gender$!: BehaviorSubject<string[]>;
@@ -50,6 +52,10 @@ export class MarketItemsComponent implements OnInit {
 
 	ngOnDestroy() {
 		this.calculationSubscription$.unsubscribe();
+	}
+
+	openMarketPurchaseModal() {
+		this.dialog.openDialog(MarketPurchaseModalComponent);
 	}
 
 }
