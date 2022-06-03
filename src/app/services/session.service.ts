@@ -43,7 +43,10 @@ export class SessionService implements HttpInterceptor {
 						this.cache = {
 							display_name: body.firstname ?? body.username ?? body.email,
 							avatar_url: body.photo_url,
-							balance: body.balance ?? 0
+							balance: body.balance ?? 0,
+							full_name: [body.firstname, body.lastname].filter(l => l).join(" ") ?? null,
+							phone: body.phone ?? null,
+							email: body.email ?? null
 						}
 						this.toast.success(`Авторизован как ${this.cache.display_name}`);
 						this.dialog.closeAll();
@@ -65,5 +68,8 @@ export class SessionService implements HttpInterceptor {
 export interface UserSessionCache {
 	display_name: string,
 	avatar_url?: string,
-	balance: number
+	balance: number,
+	full_name: string,
+	phone: string,
+	email: string
 }

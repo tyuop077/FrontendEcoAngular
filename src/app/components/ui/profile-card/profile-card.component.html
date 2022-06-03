@@ -1,0 +1,9 @@
+<img [src]="cache$?.avatar_url ?? 'assets/defaultAvatarFull.png'" alt="Изображение профиля" />
+<div class="info">
+	<h3>{{cache$?.display_name}}</h3>
+	<div class="description">
+		<span>{{cache$?.phone ?? "Телефон не указан"}}</span>
+		<span>{{cache$?.email ?? "Email не указан"}}</span>
+	</div>
+</div>
+<button>Редактировать</button>

@@ -36,6 +36,8 @@ import { MarketPromoComponent } from '@components/ui/market-promo/market-promo.c
 import { QRCodeModule } from 'angularx-qrcode';
 import { MarketPurchaseModalComponent } from '@components/modals/market-purchase-modal/market-purchase-modal.component';
 import { MultiselectComponent } from '@components/ui/multiselect/multiselect.component';
+import { ProfileComponent } from '@pages/profile/profile.component';
+import { ProfileCardComponent } from '@components/ui/profile-card/profile-card.component';
 
 @NgModule({
     declarations: [
@@ -57,7 +59,9 @@ import { MultiselectComponent } from '@components/ui/multiselect/multiselect.com
 		RegisterModalComponent,
 		MarketPromoComponent,
 		MarketPurchaseModalComponent,
-		MultiselectComponent
+		MultiselectComponent,
+		ProfileComponent,
+		ProfileCardComponent
     ],
 	imports: [
 		BrowserModule,

@@ -4,6 +4,7 @@ import { HomeComponent } from '@pages/home/home.component';
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
 import { RecyclingPointsComponent } from '@pages/recycling-points/recycling-points.component';
 import { MarketComponent } from '@pages/market/market.component';
+import { ProfileComponent } from '@pages/profile/profile.component';
 
 const routes: Routes = [
 	{
@@ -17,6 +18,10 @@ const routes: Routes = [
 	{
 		path: "market",
 		component: MarketComponent
+	},
+	{
+		path: "profile",
+		component: ProfileComponent
 	},
 	{
 		path: "**",
